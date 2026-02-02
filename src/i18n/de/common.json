@@ -1,0 +1,23 @@
+{
+  "siteTitle": "Berlin Historisch",
+  "siteSubtitle": "Entdecken Sie die faszinierende Geschichte Berlins",
+  "welcome": "Auf den Spuren der Geschichte: vom Zweiten Weltkrieg zum Kalten Krieg",
+  "periods": {
+    "preWar": "Vorkriegszeit",
+    "warTime": "Zweiter Weltkrieg",
+    "coldWar": "Kalter Krieg",
+    "modern": "Modernes Berlin"
+  },
+  "actions": {
+    "discover": "Denkmäler entdecken",
+    "learnMore": "Mehr erfahren →",
+    "search": "Denkmal suchen...",
+    "filters": "Filter",
+    "allPeriods": "Alle Perioden"
+  },
+  "stats": {
+    "monumentsCount": "Historische Denkmäler",
+    "years": "56 Jahre Geschichte",
+    "map": "Interaktive Karte"
+  }
+}

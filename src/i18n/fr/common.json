@@ -1,0 +1,23 @@
+{
+  "siteTitle": "Berlin Historique",
+  "siteSubtitle": "Découvrez l'histoire fascinante de Berlin",
+  "welcome": "Sur les traces de l'histoire : de la Seconde Guerre mondiale à la Guerre froide",
+  "periods": {
+    "preWar": "Avant-guerre",
+    "warTime": "Seconde Guerre mondiale",
+    "coldWar": "Guerre froide",
+    "modern": "Berlin moderne"
+  },
+  "actions": {
+    "discover": "Découvrir les monuments",
+    "learnMore": "En savoir plus →",
+    "search": "Rechercher un monument...",
+    "filters": "Filtres",
+    "allPeriods": "Toutes les périodes"
+  },
+  "stats": {
+    "monumentsCount": "Monuments historiques",
+    "years": "56 ans d'histoire",
+    "map": "Carte interactive"
+  }
+}

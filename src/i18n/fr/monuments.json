@@ -1,0 +1,23 @@
+{
+  "monuments": {
+    "brandenburgGate": {
+      "name": "Porte de Brandebourg",
+      "description": "Le symbole emblématique de Berlin, construit entre 1788 et 1791...",
+      "history": "Chef-d'œuvre néoclassique de Carl Gotthard Langhans...",
+      "facts": "La statue du Quadrige au sommet a été volée par Napoléon..."
+    },
+    "reichstag": {
+      "name": "Reichstag",
+      "description": "Le parlement allemand, théâtre de moments historiques majeurs...",
+      "history": "Inauguré en 1894, le Reichstag a connu l'incendie de 1933...",
+      "facts": "Plus de 1.5 million de graffitis de soldats soviétiques..."
+    }
+  },
+  "info": {
+    "hours": "Horaires",
+    "price": "Prix",
+    "access": "Accès",
+    "history": "Histoire",
+    "anecdotes": "Anecdotes"
+  }
+}

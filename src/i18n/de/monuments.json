@@ -1,0 +1,23 @@
+{
+  "monuments": {
+    "brandenburgGate": {
+      "name": "Brandenburger Tor",
+      "description": "Das Wahrzeichen Berlins, erbaut zwischen 1788 und 1791...",
+      "history": "Neoklassizistisches Meisterwerk von Carl Gotthard Langhans...",
+      "facts": "Die Quadriga-Statue auf der Spitze wurde 1806 von Napoleon gestohlen..."
+    },
+    "reichstag": {
+      "name": "Reichstag",
+      "description": "Das deutsche Parlament, Schauplatz bedeutender historischer Momente...",
+      "history": "1894 eingeweiht, erlebte der Reichstag den Brand von 1933...",
+      "facts": "Über 1,5 Millionen Graffiti sowjetischer Soldaten sind noch sichtbar..."
+    }
+  },
+  "info": {
+    "hours": "Öffnungszeiten",
+    "price": "Preis",
+    "access": "Anfahrt",
+    "history": "Geschichte",
+    "anecdotes": "Anekdoten"
+  }
+}

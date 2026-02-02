@@ -1,1 +1,907 @@
-test
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explorez l'histoire fascinante de Berlin de 1933 à 1989">
+    <title>Berlin Historique - 1933-1989</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .line-clamp-3 {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+        }
+        
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            50% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+        
+        .animate-bounce {
+            animation: bounce 2s infinite;
+        }
+        
+        .modal-overlay {
+            backdrop-filter: blur(4px);
+        }
+        
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-50 text-gray-900">
+    <div id="app"></div>
+
+    <script>
+        // Ce fichier index.html fonctionne en mode standalone sans Node.js
+        // Il inclut tout le code nécessaire directement dans le HTML
+        
+        // === DONNÉES ===
+        const monuments = [
+            {
+                id: 1,
+                name: "Porte de Brandebourg",
+                period: "preWar",
+                description: "Le symbole emblématique de Berlin, construit entre 1788 et 1791. Durant la Seconde Guerre mondiale, elle a été gravement endommagée et est devenue le symbole de la division allemande pendant la Guerre froide.",
+                history: "Chef-d'œuvre néoclassique de Carl Gotthard Langhans, la Porte de Brandebourg était la porte d'entrée royale de Berlin. En 1945, elle se trouvait dans le no man's land entre Berlin-Est et Berlin-Ouest. Le 22 décembre 1989, elle fut rouverte lors de la chute du Mur. Aujourd'hui, elle symbolise la réunification allemande et la paix européenne.",
+                facts: "La statue du Quadrige au sommet a été volée par Napoléon en 1806 et restituée en 1814. Durant la guerre froide, elle était inaccessible des deux côtés du mur.",
+                hours: "24h/24",
+                price: "Gratuit",
+                access: "S-Bahn/U-Bahn: Brandenburger Tor",
+                images: ["https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=800", "https://images.unsplash.com/photo-1587330979470-3595ac045ab3?w=800"]
+            },
+            {
+                id: 2,
+                name: "Reichstag",
+                period: "warTime",
+                description: "Le parlement allemand, théâtre de moments historiques majeurs. Incendié en 1933, gravement endommagé en 1945, il fut restauré après la réunification avec sa célèbre coupole de verre.",
+                history: "Inauguré en 1894, le Reichstag a connu l'incendie de 1933 qui permit à Hitler de consolider son pouvoir. En avril 1945, la bataille pour le Reichstag fut l'un des derniers combats de la guerre en Europe. Le drapeau soviétique hissé sur le toit devint une image iconique de la victoire alliée. Rénové par Norman Foster dans les années 1990, il abrite aujourd'hui le Bundestag.",
+                facts: "Plus de 1.5 million de graffitis de soldats soviétiques sont encore visibles à l'intérieur. La coupole de verre symbolise la transparence démocratique.",
+                hours: "8h-24h (réservation requise)",
+                price: "Gratuit",
+                access: "U-Bahn: Bundestag, Bus: 100",
+                images: ["https://images.unsplash.com/photo-1560930950-5cc20e80e392?w=800", "https://images.unsplash.com/photo-1595530661502-c0629e1903d3?w=800"]
+            },
+            {
+                id: 3,
+                name: "Mémorial de l'Holocauste",
+                period: "warTime",
+                description: "Un mémorial poignant composé de 2 711 stèles de béton rendant hommage aux victimes juives de l'Holocauste. Inauguré en 2005, il se trouve près du bunker d'Hitler.",
+                history: "Conçu par l'architecte Peter Eisenman, ce mémorial a été inauguré 60 ans après la fin de la guerre. Les stèles de hauteurs variables créent une atmosphère de désorientation et d'isolement. Le centre d'information souterrain présente les noms et témoignages des victimes. Le lieu rappelle les 6 millions de Juifs assassinés pendant la Shoah.",
+                facts: "Le site se trouve à quelques mètres seulement de l'ancien bunker de Hitler. Les stèles sont traitées avec un produit anti-graffiti développé par la même entreprise qui fabriquait le Zyklon B.",
+                hours: "24h/24, Centre d'info: 10h-20h",
+                price: "Gratuit",
+                access: "S-Bahn/U-Bahn: Brandenburger Tor",
+                images: ["https://images.unsplash.com/photo-1590876254297-6e9edbb30273?w=800"]
+            },
+            {
+                id: 4,
+                name: "Bunker d'Hitler (Führerbunker)",
+                period: "warTime",
+                description: "Le bunker souterrain où Hitler a passé ses derniers jours et s'est suicidé le 30 avril 1945. Aujourd'hui marqué par un simple panneau d'information.",
+                history: "Situé 8 mètres sous terre, ce complexe de bunkers fut le dernier quartier général de Hitler. C'est ici qu'il épousa Eva Braun et se suicida alors que l'Armée rouge approchait. Le bunker fut détruit par les Soviétiques puis complètement rasé en 1988. Aujourd'hui, seul un parking et un panneau discret marquent l'emplacement. Cette sobriété est volontaire pour éviter tout pèlerinage néonazi.",
+                facts: "Le bunker contenait 18 petites pièces et pouvait abriter 50 personnes. Les derniers occupants incluaient Joseph Goebbels et sa famille.",
+                hours: "Site extérieur accessible 24h/24",
+                price: "Gratuit",
+                access: "S-Bahn: Potsdamer Platz, U-Bahn: Mohrenstraße",
+                images: ["https://images.unsplash.com/photo-1555881543-dcf1f7d3f6a7?w=800"]
+            },
+            {
+                id: 5,
+                name: "Topographie de la Terreur",
+                period: "warTime",
+                description: "Musée et mémorial situé sur l'ancien site du quartier général de la Gestapo et des SS. Une documentation exhaustive des crimes nazis.",
+                history: "Entre 1933 et 1945, ce site abritait les centres nerveux de la terreur nazie : le quartier général de la Gestapo, des SS et du Service de sécurité du Reich. C'est d'ici que furent orchestrées les déportations, la persécution et le génocide. Le bâtiment fut détruit pendant la guerre. Aujourd'hui, une exposition permanente documente méticuleusement les crimes du régime nazi à travers photos, documents et témoignages.",
+                facts: "Une section du Mur de Berlin longe encore le site. Plus de 500 000 visiteurs viennent chaque année.",
+                hours: "10h-20h tous les jours",
+                price: "Gratuit",
+                access: "S-Bahn/U-Bahn: Potsdamer Platz",
+                images: ["https://images.unsplash.com/photo-1585208798174-6cedd86e019a?w=800"]
+            },
+            {
+                id: 6,
+                name: "Mémorial soviétique de Treptower Park",
+                period: "warTime",
+                description: "Monument imposant honorant les 80 000 soldats soviétiques tombés lors de la bataille de Berlin en 1945. L'un des plus grands mémoriaux de guerre en Europe.",
+                history: "Inauguré en 1949, ce mémorial monumental s'étend sur 100 000 m². Au centre se dresse une statue de 12 mètres représentant un soldat soviétique tenant un enfant allemand, l'épée baissée sur une croix gammée brisée. Plus de 7000 soldats sont enterrés ici. L'architecture stalinienne grandiose rappelle le sacrifice énorme de l'Union soviétique : près de 27 millions de morts pendant la guerre.",
+                facts: "Le marbre utilisé provient de la Chancellerie du Reich de Hitler. La statue pèse 72 tonnes et est entièrement creuse.",
+                hours: "Parc ouvert 24h/24",
+                price: "Gratuit",
+                access: "S-Bahn: Treptower Park",
+                images: ["https://images.unsplash.com/photo-1590659227831-f6d98cd70207?w=800"]
+            },
+            {
+                id: 7,
+                name: "Mur de Berlin (restes)",
+                period: "coldWar",
+                description: "Les vestiges du mur qui a divisé Berlin de 1961 à 1989. Symbole de la Guerre froide et de la division de l'Allemagne.",
+                history: "Construit en 1961 pour empêcher les Allemands de l'Est de fuir vers l'Ouest, le Mur mesurait 155 km et était gardé par 302 tours de contrôle. Au moins 140 personnes sont mortes en tentant de le franchir. Sa chute le 9 novembre 1989 marqua la fin de la Guerre froide. Aujourd'hui, quelques sections subsistent comme la East Side Gallery, la plus longue galerie d'art en plein air du monde avec 1,3 km de fresques.",
+                facts: "Le baiser entre Brejnev et Honecker est la fresque la plus photographiée. Des morceaux du mur sont dispersés dans 140 pays.",
+                hours: "24h/24 (extérieur)",
+                price: "Gratuit",
+                access: "U-Bahn: Warschauer Straße (East Side Gallery)",
+                images: ["https://images.unsplash.com/photo-1560869713-7d0a29430803?w=800", "https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=800"]
+            },
+            {
+                id: 8,
+                name: "Checkpoint Charlie",
+                period: "coldWar",
+                description: "Le point de passage le plus célèbre entre Berlin-Est et Berlin-Ouest pendant la Guerre froide. Théâtre de confrontations dramatiques entre les superpuissances.",
+                history: "Ouvert en 1961, Checkpoint Charlie était réservé aux Alliés, diplomates et étrangers. En octobre 1961, chars américains et soviétiques se firent face ici pendant 16 heures, au bord de la Troisième Guerre mondiale. Le poste de contrôle fut le théâtre de nombreuses tentatives d'évasion audacieuses. Aujourd'hui, une réplique de la guérite et le musée du Mur racontent ces histoires poignantes d'espoir et de désespoir.",
+                facts: "Le nom 'Charlie' vient de l'alphabet phonétique OTAN (Alpha, Bravo, Charlie). Plus de 5000 personnes ont réussi à fuir par ce secteur.",
+                hours: "Extérieur: 24h/24, Musée: 9h-22h",
+                price: "Extérieur gratuit, Musée: 14,50€",
+                access: "U-Bahn: Kochstraße",
+                images: ["https://images.unsplash.com/photo-1584714268709-c3dd9c92b378?w=800"]
+            },
+            {
+                id: 9,
+                name: "East Side Gallery",
+                period: "coldWar",
+                description: "La plus longue section conservée du Mur de Berlin, transformée en galerie d'art en plein air avec 105 fresques d'artistes du monde entier.",
+                history: "En 1990, 118 artistes de 21 pays ont transformé ce segment de 1,3 km du Mur en œuvre d'art. Les fresques célèbrent la liberté et critiquent l'oppression. Les œuvres les plus célèbres incluent 'Le Baiser' de Dmitri Vrubel et 'Test the Best' de Birgit Kinder montrant une Trabant traversant le mur. Cette galerie est devenue un symbole mondial de paix et de réconciliation.",
+                facts: "C'est le monument le plus visité de Berlin avec 3 millions de visiteurs par an. Les fresques doivent être régulièrement restaurées à cause des graffitis.",
+                hours: "24h/24",
+                price: "Gratuit",
+                access: "S-Bahn: Warschauer Straße, Ostbahnhof",
+                images: ["https://images.unsplash.com/photo-1587330979470-3595ac045ab3?w=800"]
+            },
+            {
+                id: 10,
+                name: "Tour de télévision (Fernsehturm)",
+                period: "coldWar",
+                description: "Construite en 1969 par la RDA, cette tour de 368 mètres est le plus haut bâtiment d'Allemagne. Elle symbolisait la supériorité du socialisme.",
+                history: "La construction dura 4 ans et mobilisa 800 ouvriers. La RDA voulait démontrer la puissance technique du communisme. Ironiquement, au soleil, une croix lumineuse apparaît sur la sphère - les Berlinois l'appelèrent 'la revanche du Pape'. Après la réunification, il y eut débat pour la démolir, mais elle est devenue l'emblème de Berlin. La plateforme d'observation offre une vue panoramique à 360° sur toute la ville.",
+                facts: "Elle tourne sur elle-même en 30 minutes dans le restaurant panoramique. Visible jusqu'à 40 km à la ronde.",
+                hours: "9h-24h (mars-oct), 10h-24h (nov-fév)",
+                price: "27,50€ (adultes)",
+                access: "S-Bahn/U-Bahn: Alexanderplatz",
+                images: ["https://images.unsplash.com/photo-1565967511849-76a60a516170?w=800"]
+            },
+            {
+                id: 11,
+                name: "Cathédrale de Berlin",
+                period: "preWar",
+                description: "Majestueuse cathédrale protestante construite entre 1894 et 1905. Gravement endommagée pendant la guerre, restaurée après la réunification.",
+                history: "Symbole du pouvoir impérial allemand, cette cathédrale baroque fut commandée par l'empereur Guillaume II. En 1944, une bombe incendiaire détruisit la coupole. Durant la période communiste, la RDA envisagea sa démolition mais finalement effectua des réparations minimales. Après 1989, une restauration complète restitua sa splendeur d'origine. Elle abrite aujourd'hui la crypte des Hohenzollern avec près de 100 sarcophages.",
+                facts: "270 marches mènent à la galerie panoramique. L'orgue Sauer de 1905 possède 7269 tuyaux.",
+                hours: "9h-20h (été), 9h-19h (hiver)",
+                price: "10€ (adultes)",
+                access: "S-Bahn/U-Bahn: Alexanderplatz, Bus: 100, 200",
+                images: ["https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=800"]
+            },
+            {
+                id: 12,
+                name: "Île aux Musées",
+                period: "preWar",
+                description: "Ensemble unique de cinq musées sur une île de la Spree, classé au patrimoine mondial de l'UNESCO. Gravement endommagé en 1945.",
+                history: "Créée au XIXe siècle pour démocratiser l'art et la culture, l'Île aux Musées rassemble l'Altes Museum (1830), le Neues Museum (1855), l'Alte Nationalgalerie (1876), le Bode-Museum (1904) et le Pergamon Museum (1930). Durant la guerre, les bombardements détruisirent 70% du Neues Museum. Les collections furent dispersées entre Est et Ouest. Après la réunification, un plan de restauration de 30 ans fut lancé. Le Pergamon abrite l'autel de Pergame et la porte d'Ishtar de Babylone.",
+                facts: "Le buste de Néfertiti au Neues Museum est l'une des pièces les plus célèbres. Plus de 3 millions de visiteurs par an.",
+                hours: "10h-18h (variable selon musée)",
+                price: "12-24€ selon musée, Pass journée: 24€",
+                access: "S-Bahn: Hackescher Markt, U-Bahn: Friedrichstraße",
+                images: ["https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=800"]
+            },
+            {
+                id: 13,
+                name: "Mémorial de la Résistance allemande",
+                period: "warTime",
+                description: "Mémorial dédié aux Allemands qui ont résisté au nazisme, situé dans le bâtiment où fut exécuté le complot du 20 juillet 1944 contre Hitler.",
+                history: "Le 20 juillet 1944, le colonel Claus von Stauffenberg tenta d'assassiner Hitler avec une bombe. L'attentat échoua et Stauffenberg fut fusillé le soir même dans la cour du Bendlerblock avec trois autres conspirateurs. Plus de 5000 personnes furent arrêtées et 200 exécutées suite à cet attentat. Le mémorial honore tous ceux qui résistèrent : étudiants de la Rose Blanche, communistes, religieux, et tant d'autres qui risquèrent leur vie pour leurs convictions.",
+                facts: "Une plaque marque l'endroit exact de l'exécution. L'exposition présente plus de 5000 biographies de résistants.",
+                hours: "Lun-Mer 9h-18h, Jeu 9h-20h, Sam-Dim 10h-18h",
+                price: "Gratuit",
+                access: "U-Bahn: Kurfürstenstraße, Bus: M29",
+                images: ["https://images.unsplash.com/photo-1590659227831-f6d98cd70207?w=800"]
+            },
+            {
+                id: 14,
+                name: "Stade Olympique",
+                period: "warTime",
+                description: "Construit pour les Jeux Olympiques de 1936, cet immense stade fut un outil de propagande nazie. Témoin vivant de l'histoire olympique et militaire.",
+                history: "Hitler utilisa les JO de 1936 pour démontrer la 'supériorité aryenne'. L'athlète noir américain Jesse Owens défia cette propagande en remportant 4 médailles d'or. Le stade pouvait accueillir 110 000 spectateurs. Durant la guerre, il servit de dépôt militaire. Après 1945, les Britanniques l'utilisèrent. Rénové pour la Coupe du Monde 2006, il reste un des plus beaux stades d'Europe, siège du Hertha Berlin.",
+                facts: "La cloche olympique originale de 70 tonnes est toujours visible. Des tunnels secrets existent sous le stade.",
+                hours: "Visites guidées uniquement, horaires variables",
+                price: "11€ (visite guidée)",
+                access: "S-Bahn/U-Bahn: Olympiastadion",
+                images: ["https://images.unsplash.com/photo-1551958219-acbc608c6377?w=800"]
+            },
+            {
+                id: 15,
+                name: "Gare d'Anhalter",
+                period: "warTime",
+                description: "Ruines d'une des plus grandes gares d'Europe, témoin des déportations et de la destruction de Berlin. Seule la façade subsiste.",
+                history: "Inaugurée en 1880, cette gare monumentale était la porte sud de Berlin. Entre 1933 et 1945, des dizaines de milliers de Juifs furent déportés d'ici vers les camps d'extermination. Hitler l'utilisa pour ses arrivées spectaculaires. En 1945, elle fut gravement bombardée. La RDA décida de la démolir en 1960, ne gardant qu'un fragment de façade comme mémorial anti-guerre. Aujourd'hui, ce vestige fantomatique rappelle la grandeur perdue et les horreurs du passé.",
+                facts: "C'était l'une des gares les plus fréquentées d'Europe avec 40 000 passagers par jour. La salle d'attente pouvait accueillir 1500 personnes.",
+                hours: "Accessible 24h/24 (ruines extérieures)",
+                price: "Gratuit",
+                access: "S-Bahn/U-Bahn: Anhalter Bahnhof",
+                images: ["https://images.unsplash.com/photo-1590659227831-f6d98cd70207?w=800"]
+            },
+            {
+                id: 16,
+                name: "Nouvelle Garde (Neue Wache)",
+                period: "warTime",
+                description: "Mémorial central d'Allemagne aux victimes de la guerre et de la tyrannie. Architecture néoclassique sobre abritant la sculpture 'Mère et fils mort'.",
+                history: "Construite en 1818 comme corps de garde royal, elle devint un mémorial de guerre en 1931. En 1993, après la réunification, elle fut désignée mémorial central d'Allemagne. Au centre, une copie agrandie de la sculpture de Käthe Kollwitz représente une mère tenant son fils mort - symbole universel de la souffrance causée par la guerre. Une ouverture dans le toit expose la sculpture aux éléments : pluie, neige et soleil, rappelant la souffrance sans abri des victimes.",
+                facts: "Käthe Kollwitz perdit son fils à 18 ans pendant la Première Guerre mondiale. Le lieu honore toutes les victimes : soldats, civils, persécutés.",
+                hours: "10h-18h tous les jours",
+                price: "Gratuit",
+                access: "S-Bahn/U-Bahn: Friedrichstraße, Bus: 100, 200",
+                images: ["https://images.unsplash.com/photo-1590659227831-f6d98cd70207?w=800"]
+            },
+            {
+                id: 17,
+                name: "Palais des Larmes",
+                period: "coldWar",
+                description: "Ancien hall de départ de la gare de Friedrichstraße où les familles se disaient adieu entre Est et Ouest. Musée émouvant de la division.",
+                history: "Entre 1962 et 1989, ce bâtiment en verre fut le théâtre de scènes déchirantes : familles séparées par le Mur se retrouvaient brièvement ici avant de se dire au revoir, incertaines de se revoir. Les contrôles étaient stricts, humiliants. Beaucoup pleuraient, d'où le nom 'Palais des Larmes'. Aujourd'hui transformé en musée, il présente des objets personnels, photos et témoignages qui racontent ces drames quotidiens de la division allemande.",
+                facts: "Plus de 35 millions de personnes ont transité par ce point de passage. Certains attendaient 8 heures pour les contrôles.",
+                hours: "Mar-Ven 9h-19h, Sam-Dim 10h-18h",
+                price: "Gratuit",
+                access: "S-Bahn/U-Bahn: Friedrichstraße",
+                images: ["https://images.unsplash.com/photo-1585208798174-6cedd86e019a?w=800"]
+            },
+            {
+                id: 18,
+                name: "Église du Souvenir",
+                period: "warTime",
+                description: "Église en ruines conservée comme monument anti-guerre. La tour détruite contraste avec la nouvelle église moderne en verre bleu.",
+                history: "Construite en 1895 en l'honneur de l'empereur Guillaume Ier, cette église néo-romane fut gravement endommagée lors d'un raid aérien britannique en 1943. Après-guerre, Berlin décida de conserver les ruines comme rappel permanent des horreurs de la guerre. En 1961, Egon Eiermann conçut une église moderne octogonale en verre bleu à côté des ruines. Les 20 000 vitraux créent une atmosphère mystique bleue à l'intérieur. Les Berlinois surnomment affectueusement l'ensemble 'la dent creuse et le poudrier'.",
+                facts: "Une croix de clous de Coventry rappelle le jumelage avec la ville anglaise également bombardée. Les mosaïques d'origine sont partiellement conservées.",
+                hours: "Église: 9h-19h, Ruines: 10h-18h",
+                price: "Gratuit",
+                access: "S-Bahn/U-Bahn: Zoologischer Garten",
+                images: ["https://images.unsplash.com/photo-1599946347371-68eb71b16afc?w=800"]
+            }
+        ];
+
+        const timeline = [
+            { year: 1933, event: "Hitler devient Chancelier" },
+            { year: 1936, event: "Jeux Olympiques de Berlin" },
+            { year: 1939, event: "Début de la Seconde Guerre mondiale" },
+            { year: 1945, event: "Capitulation allemande, fin de la guerre" },
+            { year: 1961, event: "Construction du Mur de Berlin" },
+            { year: 1989, event: "Chute du Mur de Berlin" },
+            { year: 1990, event: "Réunification allemande" },
+            { year: 2005, event: "Inauguration du Mémorial de l'Holocauste" }
+        ];
+
+        const periodColors = {
+            preWar: '#2d2d2d',
+            warTime: '#8b0000',
+            coldWar: '#1a5490',
+            modern: '#c8a865'
+        };
+
+        const periodLabels = {
+            preWar: 'Avant-guerre',
+            warTime: 'Seconde Guerre mondiale',
+            coldWar: 'Guerre froide',
+            modern: 'Berlin moderne'
+        };
+
+        // État de l'application
+        let state = {
+            selectedMonument: null,
+            searchTerm: '',
+            selectedPeriod: 'all',
+            showFilters: false,
+            currentImageIndex: 0,
+            mobileMenuOpen: false,
+            activeSection: 'home'
+        };
+
+        // Filtrer les monuments
+        function getFilteredMonuments() {
+            return monuments.filter(monument => {
+                const matchesSearch = monument.name.toLowerCase().includes(state.searchTerm.toLowerCase()) ||
+                                     monument.description.toLowerCase().includes(state.searchTerm.toLowerCase());
+                const matchesPeriod = state.selectedPeriod === 'all' || monument.period === state.selectedPeriod;
+                return matchesSearch && matchesPeriod;
+            });
+        }
+
+        // Icônes SVG
+        const icons = {
+            menu: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>',
+            search: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>',
+            filter: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>',
+            mapPin: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>',
+            mapPinLarge: '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>',
+            mapPinXL: '<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>',
+            calendar: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>',
+            calendarLarge: '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>',
+            clock: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>',
+            euro: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h12"/><path d="M4 14h9"/><path d="M19 6a7.7 7.7 0 0 0-5.2-2A7.9 7.9 0 0 0 6 12a7.9 7.9 0 0 0 7.8 8 7.7 7.7 0 0 0 5.2-2"/></svg>',
+            x: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>',
+            chevronLeft: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>',
+            chevronRight: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>'
+        };
+
+        // Fonctions de rendu (suite dans un autre commentaire car très long)
+        // Pour voir le code complet, continuez à lire ci-dessous...
+        
+    </script>
+    
+    <script>
+        // === FONCTIONS DE RENDU ===
+        
+        function renderHeader() {
+            return `
+                <header class="bg-black text-white shadow-2xl sticky top-0 z-50 border-b-4 border-red-800">
+                    <div class="container mx-auto px-4 py-3">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-gradient-to-br from-black via-red-800 to-yellow-600 rounded-lg flex items-center justify-center font-bold text-xl">
+                                    BH
+                                </div>
+                                <div class="flex flex-col">
+                                    <h1 class="text-2xl md:text-3xl font-bold tracking-tight">Berlin Historique</h1>
+                                    <p class="text-xs text-gray-400 hidden md:block">Découvrez l'histoire fascinante de Berlin</p>
+                                </div>
+                            </div>
+                            
+                            <nav class="hidden lg:flex items-center space-x-1">
+                                <button onclick="changeSection('home')" class="px-6 py-2 rounded-lg transition-all font-medium ${state.activeSection === 'home' ? 'bg-red-800 text-white shadow-lg' : 'text-gray-300 hover:bg-gray-800 hover:text-white'}">
+                                    Accueil
+                                </button>
+                                <button onclick="changeSection('monuments')" class="px-6 py-2 rounded-lg transition-all font-medium ${state.activeSection === 'monuments' ? 'bg-red-800 text-white shadow-lg' : 'text-gray-300 hover:bg-gray-800 hover:text-white'}">
+                                    Monuments
+                                </button>
+                                <button onclick="changeSection('timeline')" class="px-6 py-2 rounded-lg transition-all font-medium ${state.activeSection === 'timeline' ? 'bg-red-800 text-white shadow-lg' : 'text-gray-300 hover:bg-gray-800 hover:text-white'}">
+                                    Chronologie
+                                </button>
+                                <button onclick="changeSection('map')" class="px-6 py-2 rounded-lg transition-all font-medium ${state.activeSection === 'map' ? 'bg-red-800 text-white shadow-lg' : 'text-gray-300 hover:bg-gray-800 hover:text-white'}">
+                                    Carte Interactive
+                                </button>
+                            </nav>
+
+                            <div class="flex items-center space-x-3">
+                                <div class="flex bg-gray-800 rounded-lg p-1 border border-gray-700 opacity-50 cursor-not-allowed">
+                                    <button disabled class="px-4 py-2 rounded-md bg-red-800 text-white shadow-lg font-semibold">
+                                        🇫🇷 FR
+                                    </button>
+                                    <button disabled class="px-4 py-2 rounded-md text-gray-400 font-semibold">
+                                        🇩🇪 DE
+                                    </button>
+                                </div>
+
+                                <button onclick="toggleMobileMenu()" class="lg:hidden p-2 hover:bg-gray-800 rounded-lg transition-colors">
+                                    ${icons.menu}
+                                </button>
+                            </div>
+                        </div>
+
+                        ${state.mobileMenuOpen ? `
+                            <nav class="lg:hidden mt-4 pb-2 border-t border-gray-800 pt-4">
+                                <div class="flex flex-col space-y-2">
+                                    <button onclick="changeSection('home')" class="px-4 py-3 rounded-lg text-left transition-all font-medium ${state.activeSection === 'home' ? 'bg-red-800 text-white' : 'text-gray-300 hover:bg-gray-800'}">
+                                        Accueil
+                                    </button>
+                                    <button onclick="changeSection('monuments')" class="px-4 py-3 rounded-lg text-left transition-all font-medium ${state.activeSection === 'monuments' ? 'bg-red-800 text-white' : 'text-gray-300 hover:bg-gray-800'}">
+                                        Monuments
+                                    </button>
+                                    <button onclick="changeSection('timeline')" class="px-4 py-3 rounded-lg text-left transition-all font-medium ${state.activeSection === 'timeline' ? 'bg-red-800 text-white' : 'text-gray-300 hover:bg-gray-800'}">
+                                        Chronologie
+                                    </button>
+                                    <button onclick="changeSection('map')" class="px-4 py-3 rounded-lg text-left transition-all font-medium ${state.activeSection === 'map' ? 'bg-red-800 text-white' : 'text-gray-300 hover:bg-gray-800'}">
+                                        Carte Interactive
+                                    </button>
+                                </div>
+                            </nav>
+                        ` : ''}
+                    </div>
+                </header>
+            `;
+        }
+
+        function renderHero() {
+            return `
+                <section class="relative h-screen bg-black overflow-hidden">
+                    <div class="absolute inset-0">
+                        <img 
+                            src="https://images.unsplash.com/photo-1560869713-7d0a29430803?w=1920&q=80" 
+                            alt="Berlin Wall"
+                            class="w-full h-full object-cover opacity-50"
+                        />
+                        <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black"></div>
+                    </div>
+                    
+                    <div class="relative container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
+                        <div class="max-w-4xl">
+                            <div class="mb-6 inline-block px-6 py-2 bg-red-800/80 backdrop-blur-sm rounded-full text-sm font-semibold uppercase tracking-wider">
+                                1933 - 1989
+                            </div>
+                            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                                Berlin - 1933-1989
+                            </h1>
+                            <p class="text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed">
+                                Sur les traces de l'histoire : de la Seconde Guerre mondiale à la Guerre froide
+                            </p>
+                            <button
+                                onclick="changeSection('monuments')"
+                                class="group px-8 py-4 bg-red-800 hover:bg-red-700 text-white text-lg font-semibold rounded-lg shadow-2xl transition-all transform hover:scale-105 hover:shadow-red-800/50"
+                            >
+                                Découvrir les monuments
+                                <span class="ml-2 inline-block transition-transform group-hover:translate-x-1">→</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+                        <div class="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+                            <div class="w-1 h-3 bg-white/50 rounded-full mt-2"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="py-20 bg-white">
+                    <div class="container mx-auto px-4">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                            <div class="p-8 bg-gray-50 rounded-xl hover:shadow-xl transition-shadow">
+                                <div class="w-16 h-16 bg-red-800 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <span class="text-3xl font-bold text-white">18</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-2">Monuments historiques</h3>
+                                <p class="text-gray-600">Sites emblématiques de la Seconde Guerre mondiale et de la Guerre froide</p>
+                            </div>
+                            <div class="p-8 bg-gray-50 rounded-xl hover:shadow-xl transition-shadow">
+                                <div class="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-4">
+                                    ${icons.calendarLarge}
+                                </div>
+                                <h3 class="text-xl font-bold mb-2">56 ans d'histoire</h3>
+                                <p class="text-gray-600">De 1933 à 1989, une période qui a transformé Berlin</p>
+                            </div>
+                            <div class="p-8 bg-gray-50 rounded-xl hover:shadow-xl transition-shadow">
+                                <div class="w-16 h-16 bg-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    ${icons.mapPinLarge}
+                                </div>
+                                <h3 class="text-xl font-bold mb-2">Carte interactive</h3>
+                                <p class="text-gray-600">Explorez Berlin et localisez chaque monument historique</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            `;
+        }
+
+        function renderMonumentsFilter() {
+            return `
+                <section class="container mx-auto px-4 py-8 mt-8">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <div class="flex flex-col md:flex-row gap-4">
+                            <div class="flex-1 relative">
+                                <div class="absolute left-3 top-3 text-gray-400">${icons.search}</div>
+                                <input
+                                    type="text"
+                                    placeholder="Rechercher un monument..."
+                                    value="${state.searchTerm}"
+                                    oninput="updateSearch(this.value)"
+                                    class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-800 focus:border-transparent"
+                                />
+                            </div>
+                            <button
+                                onclick="toggleFilters()"
+                                class="flex items-center justify-center space-x-2 px-6 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors"
+                            >
+                                <span class="inline-block">${icons.filter}</span>
+                                <span>Filtres</span>
+                            </button>
+                        </div>
+
+                        ${state.showFilters ? `
+                            <div class="mt-4 pt-4 border-t border-gray-200">
+                                <div class="flex flex-wrap gap-3">
+                                    <button
+                                        onclick="updatePeriod('all')"
+                                        class="px-4 py-2 rounded-lg transition-all ${state.selectedPeriod === 'all' ? 'bg-gray-900 text-white' : 'bg-gray-100 hover:bg-gray-200'}"
+                                    >
+                                        Toutes les périodes
+                                    </button>
+                                    <button
+                                        onclick="updatePeriod('preWar')"
+                                        class="px-4 py-2 rounded-lg transition-all ${state.selectedPeriod === 'preWar' ? 'text-white' : 'bg-gray-100 hover:bg-gray-200'}"
+                                        style="${state.selectedPeriod === 'preWar' ? `background-color: ${periodColors.preWar}` : ''}"
+                                    >
+                                        Avant-guerre
+                                    </button>
+                                    <button
+                                        onclick="updatePeriod('warTime')"
+                                        class="px-4 py-2 rounded-lg transition-all ${state.selectedPeriod === 'warTime' ? 'text-white' : 'bg-gray-100 hover:bg-gray-200'}"
+                                        style="${state.selectedPeriod === 'warTime' ? `background-color: ${periodColors.warTime}` : ''}"
+                                    >
+                                        Seconde Guerre mondiale
+                                    </button>
+                                    <button
+                                        onclick="updatePeriod('coldWar')"
+                                        class="px-4 py-2 rounded-lg transition-all ${state.selectedPeriod === 'coldWar' ? 'text-white' : 'bg-gray-100 hover:bg-gray-200'}"
+                                        style="${state.selectedPeriod === 'coldWar' ? `background-color: ${periodColors.coldWar}` : ''}"
+                                    >
+                                        Guerre froide
+                                    </button>
+                                </div>
+                            </div>
+                        ` : ''}
+                    </div>
+                </section>
+            `;
+        }
+
+        function renderMonumentsList() {
+            const filtered = getFilteredMonuments();
+            return `
+                <section class="container mx-auto px-4 py-8">
+                    <h2 class="text-4xl font-bold mb-8 text-center">Monuments</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        ${filtered.map(monument => `
+                            <div
+                                onclick="openMonument(${monument.id})"
+                                class="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer transform transition-all hover:scale-105 hover:shadow-xl"
+                            >
+                                <div class="relative h-48 bg-gray-200">
+                                    <img
+                                        src="${monument.images[0]}"
+                                        alt="${monument.name}"
+                                        class="w-full h-full object-cover"
+                                    />
+                                    <div
+                                        class="absolute top-2 right-2 px-3 py-1 rounded-full text-white text-sm font-semibold"
+                                        style="background-color: ${periodColors[monument.period]}"
+                                    >
+                                        ${periodLabels[monument.period]}
+                                    </div>
+                                </div>
+                                <div class="p-5">
+                                    <h3 class="text-xl font-bold mb-2">${monument.name}</h3>
+                                    <p class="text-gray-600 text-sm line-clamp-3">${monument.description}</p>
+                                    <div class="mt-4 flex items-center justify-between text-sm text-gray-500">
+                                        <span class="flex items-center">
+                                            <span class="inline-block mr-1">${icons.mapPin}</span>
+                                            Berlin
+                                        </span>
+                                        <span class="text-red-800 font-semibold hover:text-red-900">En savoir plus →</span>
+                                    </div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </section>
+            `;
+        }
+
+        function renderTimeline() {
+            return `
+                <section class="bg-gray-100 py-16 min-h-screen">
+                    <div class="container mx-auto px-4">
+                        <h2 class="text-4xl font-bold mb-12 text-center">Chronologie</h2>
+                        <div class="relative max-w-4xl mx-auto">
+                            <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-gray-900 via-red-900 to-gray-900"></div>
+                            ${timeline.map((item, index) => `
+                                <div class="mb-8 flex justify-between items-center w-full ${index % 2 === 0 ? 'flex-row-reverse' : ''}">
+                                    <div class="w-5/12"></div>
+                                    <div class="z-20 flex items-center justify-center w-12 h-12 bg-red-800 rounded-full shadow-lg ring-4 ring-white">
+                                        ${icons.calendar}
+                                    </div>
+                                    <div class="w-5/12 ${index % 2 === 0 ? 'text-right' : 'text-left'}">
+                                        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                                            <h3 class="text-2xl font-bold text-red-900 mb-2">${item.year}</h3>
+                                            <p class="text-gray-700">${item.event}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                </section>
+            `;
+        }
+
+        function renderMap() {
+            return `
+                <section class="container mx-auto px-4 py-16 min-h-screen">
+                    <h2 class="text-4xl font-bold mb-8 text-center">Carte Interactive</h2>
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <div class="bg-gradient-to-br from-gray-100 to-gray-200 h-[600px] rounded-lg flex items-center justify-center relative overflow-hidden border-2 border-gray-300">
+                            <img
+                                src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1200"
+                                alt="Berlin Map"
+                                class="w-full h-full object-cover opacity-40"
+                            />
+                            <div class="absolute inset-0 flex items-center justify-center bg-black/20">
+                                <div class="text-center text-white bg-black/70 p-8 rounded-xl backdrop-blur-sm">
+                                    ${icons.mapPinXL}
+                                    <p class="text-2xl font-bold mb-2">Carte Interactive</p>
+                                    <p class="text-sm mb-6">Explorez les 18 monuments historiques de Berlin</p>
+                                </div>
+                            </div>
+                            
+                            ${monuments.slice(0, 10).map((monument, idx) => `
+                                <div
+                                    onclick="openMonument(${monument.id})"
+                                    class="absolute w-10 h-10 bg-red-800 rounded-full border-4 border-white shadow-lg cursor-pointer hover:scale-125 transition-transform flex items-center justify-center"
+                                    style="left: ${20 + idx * 8}%; top: ${30 + (idx % 3) * 20}%"
+                                    title="${monument.name}"
+                                >
+                                    <span class="text-white text-xs font-bold">${idx + 1}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                        
+                        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg">
+                                <div class="w-4 h-4 rounded-full" style="background-color: ${periodColors.preWar}"></div>
+                                <span class="text-sm font-medium">Avant-guerre</span>
+                            </div>
+                            <div class="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg">
+                                <div class="w-4 h-4 rounded-full" style="background-color: ${periodColors.warTime}"></div>
+                                <span class="text-sm font-medium">Seconde Guerre mondiale</span>
+                            </div>
+                            <div class="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg">
+                                <div class="w-4 h-4 rounded-full" style="background-color: ${periodColors.coldWar}"></div>
+                                <span class="text-sm font-medium">Guerre froide</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            `;
+        }
+
+        function renderModal() {
+            if (!state.selectedMonument) return '';
+            
+            const monument = monuments.find(m => m.id === state.selectedMonument);
+            if (!monument) return '';
+
+            return `
+                <div class="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 overflow-y-auto modal-overlay" onclick="closeModal(event)">
+                    <div class="bg-white rounded-lg max-w-4xl w-full my-8 relative" onclick="event.stopPropagation()">
+                        <button
+                            onclick="closeModal()"
+                            class="absolute top-4 right-4 z-10 p-2 bg-red-800 text-white rounded-full hover:bg-red-900 transition-colors"
+                        >
+                            ${icons.x}
+                        </button>
+
+                        <div class="relative h-96 bg-gray-200">
+                            <img
+                                src="${monument.images[state.currentImageIndex]}"
+                                alt="${monument.name}"
+                                class="w-full h-full object-cover"
+                            />
+                            ${monument.images.length > 1 ? `
+                                <button
+                                    onclick="previousImage()"
+                                    class="absolute left-4 top-1/2 -translate-y-1/2 p-2 bg-black/50 text-white rounded-full hover:bg-black/70"
+                                >
+                                    ${icons.chevronLeft}
+                                </button>
+                                <button
+                                    onclick="nextImage()"
+                                    class="absolute right-4 top-1/2 -translate-y-1/2 p-2 bg-black/50 text-white rounded-full hover:bg-black/70"
+                                >
+                                    ${icons.chevronRight}
+                                </button>
+                            ` : ''}
+                            <div
+                                class="absolute top-4 left-4 px-4 py-2 rounded-full text-white font-semibold"
+                                style="background-color: ${periodColors[monument.period]}"
+                            >
+                                ${periodLabels[monument.period]}
+                            </div>
+                        </div>
+
+                        <div class="p-8 max-h-96 overflow-y-auto">
+                            <h2 class="text-3xl font-bold mb-4">${monument.name}</h2>
+
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                                <div class="flex items-start space-x-2">
+                                    <span class="text-red-800 mt-1 flex-shrink-0">${icons.clock}</span>
+                                    <div>
+                                        <p class="font-semibold">Horaires</p>
+                                        <p class="text-sm text-gray-600">${monument.hours}</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-2">
+                                    <span class="text-red-800 mt-1 flex-shrink-0">${icons.euro}</span>
+                                    <div>
+                                        <p class="font-semibold">Prix</p>
+                                        <p class="text-sm text-gray-600">${monument.price}</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-2">
+                                    <span class="text-red-800 mt-1 flex-shrink-0">${icons.mapPin}</span>
+                                    <div>
+                                        <p class="font-semibold">Accès</p>
+                                        <p class="text-sm text-gray-600">${monument.access}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="space-y-6">
+                                <div>
+                                    <h3 class="text-xl font-bold mb-2 text-red-900">Histoire</h3>
+                                    <p class="text-gray-700 leading-relaxed">${monument.history}</p>
+                                </div>
+
+                                <div>
+                                    <h3 class="text-xl font-bold mb-2 text-red-900">Anecdotes</h3>
+                                    <p class="text-gray-700 leading-relaxed">${monument.facts}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderFooter() {
+            return `
+                <footer class="bg-black text-white py-12 mt-auto border-t-4 border-red-800">
+                    <div class="container mx-auto px-4">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                            <div>
+                                <div class="flex items-center space-x-3 mb-4">
+                                    <div class="w-10 h-10 bg-gradient-to-br from-black via-red-800 to-yellow-600 rounded-lg flex items-center justify-center font-bold text-xl">
+                                        BH
+                                    </div>
+                                    <h3 class="text-xl font-bold">Berlin Historique</h3>
+                                </div>
+                                <p class="text-gray-400 text-sm">
+                                    Explorez l'histoire fascinante de Berlin à travers ses monuments emblématiques.
+                                </p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-bold mb-4 text-lg">Navigation</h4>
+                                <ul class="space-y-2 text-gray-400">
+                                    <li>
+                                        <button onclick="changeSection('home')" class="hover:text-white transition-colors">
+                                            Accueil
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button onclick="changeSection('monuments')" class="hover:text-white transition-colors">
+                                            Monuments
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button onclick="changeSection('timeline')" class="hover:text-white transition-colors">
+                                            Chronologie
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button onclick="changeSection('map')" class="hover:text-white transition-colors">
+                                            Carte Interactive
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-bold mb-4 text-lg">Périodes</h4>
+                                <ul class="space-y-2 text-gray-400">
+                                    <li class="flex items-center space-x-2">
+                                        <div class="w-3 h-3 rounded-full" style="background-color: ${periodColors.preWar}"></div>
+                                        <span>Avant-guerre</span>
+                                    </li>
+                                    <li class="flex items-center space-x-2">
+                                        <div class="w-3 h-3 rounded-full" style="background-color: ${periodColors.warTime}"></div>
+                                        <span>Seconde Guerre mondiale</span>
+                                    </li>
+                                    <li class="flex items-center space-x-2">
+                                        <div class="w-3 h-3 rounded-full" style="background-color: ${periodColors.coldWar}"></div>
+                                        <span>Guerre froide</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="border-t border-gray-800 pt-8 text-center">
+                            <p class="text-gray-400 text-sm">
+                                © 2026 Berlin Historique - Tous droits réservés
+                            </p>
+                            <p class="text-gray-500 text-xs mt-2">
+                                Un voyage à travers l'histoire de Berlin
+                            </p>
+                        </div>
+                    </div>
+                </footer>
+            `;
+        }
+
+        function render() {
+            const content = state.activeSection === 'home' ? renderHero() :
+                          state.activeSection === 'monuments' ? renderMonumentsFilter() + renderMonumentsList() :
+                          state.activeSection === 'timeline' ? renderTimeline() :
+                          state.activeSection === 'map' ? renderMap() : '';
+
+            document.getElementById('app').innerHTML = `
+                ${renderHeader()}
+                ${content}
+                ${renderModal()}
+                ${renderFooter()}
+            `;
+        }
+
+        // === ACTIONS ===
+        function changeSection(section) {
+            state.activeSection = section;
+            state.mobileMenuOpen = false;
+            window.scrollTo(0, 0);
+            render();
+        }
+
+        function toggleMobileMenu() {
+            state.mobileMenuOpen = !state.mobileMenuOpen;
+            render();
+        }
+
+        function toggleFilters() {
+            state.showFilters = !state.showFilters;
+            render();
+        }
+
+        function updateSearch(value) {
+            state.searchTerm = value;
+            render();
+        }
+
+        function updatePeriod(period) {
+            state.selectedPeriod = period;
+            render();
+        }
+
+        function openMonument(id) {
+            state.selectedMonument = id;
+            state.currentImageIndex = 0;
+            render();
+        }
+
+        function closeModal(event) {
+            if (event && event.target !== event.currentTarget) return;
+            state.selectedMonument = null;
+            state.currentImageIndex = 0;
+            render();
+        }
+
+        function previousImage() {
+            const monument = monuments.find(m => m.id === state.selectedMonument);
+            if (monument) {
+                state.currentImageIndex = (state.currentImageIndex - 1 + monument.images.length) % monument.images.length;
+                render();
+            }
+        }
+
+        function nextImage() {
+            const monument = monuments.find(m => m.id === state.selectedMonument);
+            if (monument) {
+                state.currentImageIndex = (state.currentImageIndex + 1) % monument.images.length;
+                render();
+            }
+        }
+
+        // Rendu initial
+        render();
+    </script>
+</body>
+</html>

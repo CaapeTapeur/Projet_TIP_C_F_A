@@ -1,14 +1,15 @@
 {
   "navigation": {
+    "navigation": "Navigation",
     "home": "Startseite",
     "monuments": "Denkmäler",
-    "timeline": "Zeitstrahl",
-    "map": "Interaktive Karte"
-  },
-  "footer": {
-    "about": "Entdecken Sie die faszinierende Geschichte Berlins durch seine Wahrzeichen.",
-    "copyright": "© 2026 Berlin Historisch - Alle Rechte vorbehalten",
-    "tagline": "Eine Reise durch die Geschichte Berlins"
+    "timeline": "Chronologie",
+    "map": "Interaktive Karte",
+    "footer": {
+      "about": "Entdecken Sie die faszinierende Geschichte Berlins durch seine ikonischen Denkmäler.",
+      "copyright": "© 2026 Berlin Historisch - Alle Rechte vorbehalten",
+      "tagline": "Eine Reise durch die Geschichte Berlins"
+    }
   },
   "modal": {
     "close": "Schließen"

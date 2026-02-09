@@ -3,6 +3,7 @@
   "siteSubtitle": "Découvrez l'histoire fascinante de Berlin",
   "welcome": "Sur les traces de l'histoire : de la Seconde Guerre mondiale à la Guerre froide",
   "periods": {
+    "title": "Périodes",
     "preWar": "Avant-guerre",
     "warTime": "Seconde Guerre mondiale",
     "coldWar": "Guerre froide",
@@ -18,6 +19,9 @@
   "stats": {
     "monumentsCount": "Monuments historiques",
     "years": "56 ans d'histoire",
-    "map": "Carte interactive"
+    "map": "Carte interactive",
+    "monumentsDesc": "Sites emblématiques de la Seconde Guerre mondiale et de la Guerre froide",
+    "yearsDesc": "De 1933 à 1989, une période qui a transformé Berlin",
+    "mapDesc": "Explorez Berlin et localisez chaque monument historique"
   }
 }

@@ -8,7 +8,7 @@ const translations = {
 
 // Configuration par défaut
 const defaultLanguage = 'fr';
-const currentLanguage = defaultLanguage;
+let currentLanguage = defaultLanguage;
 
 // Fonction pour obtenir une traduction avec fallback
 export const t = (path, lang = currentLanguage) => {

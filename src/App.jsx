@@ -9,7 +9,6 @@ import Timeline from './components/Timeline';
 import InteractiveMap from './components/InteractiveMap';
 import { monuments } from './data/monuments';
 import { periodLabels, periodColors } from './data/monuments';
-import { timeline } from './data/timeline';
 
 import { t as translate, setLanguage as setAppLanguage, getLanguage as getAppLanguage } from './i18n';
 
@@ -127,7 +126,6 @@ const App = () => {
                 onSectionChange={handleSectionChange}
                 mobileMenuOpen={mobileMenuOpen}
                 setMobileMenuOpen={setMobileMenuOpen}
-                currentLang={currentLang}
             />
 
             {/* Section Accueil */}
@@ -167,10 +165,7 @@ const App = () => {
 
             {/* Section Chronologie */}
             {activeSection === 'timeline' && (
-                <Timeline
-                    timeline={timeline}
-                    t={t}
-                />
+                <Timeline/>
             )}
 
             {/* Section Carte Interactive */}

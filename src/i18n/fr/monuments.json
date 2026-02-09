@@ -2,15 +2,39 @@
   "monuments": {
     "brandenburgGate": {
       "name": "Porte de Brandebourg",
-      "description": "Le symbole emblématique de Berlin, construit entre 1788 et 1791...",
-      "history": "Chef-d'œuvre néoclassique de Carl Gotthard Langhans...",
-      "facts": "La statue du Quadrige au sommet a été volée par Napoléon..."
+      "description": "Le symbole emblématique de Berlin, construit entre 1788 et 1791. Durant la Seconde Guerre mondiale, elle a été gravement endommagée et est devenue le symbole de la division allemande pendant la Guerre froide.",
+      "history": "Chef-d'œuvre néoclassique de Carl Gotthard Langhans, la Porte de Brandebourg était la porte d'entrée royale de Berlin. En 1945, elle se trouvait dans le no man's land entre Berlin-Est et Berlin-Ouest. Le 22 décembre 1989, elle fut rouverte lors de la chute du Mur. Aujourd'hui, elle symbolise la réunification allemande et la paix européenne.",
+      "facts": "La statue du Quadrige au sommet a été volée par Napoléon en 1806 et restituée en 1814. Durant la guerre froide, elle était inaccessible des deux côtés du mur."
     },
     "reichstag": {
       "name": "Reichstag",
-      "description": "Le parlement allemand, théâtre de moments historiques majeurs...",
-      "history": "Inauguré en 1894, le Reichstag a connu l'incendie de 1933...",
-      "facts": "Plus de 1.5 million de graffitis de soldats soviétiques..."
+      "description": "Le parlement allemand, théâtre de moments historiques majeurs. Incendié en 1933, gravement endommagé en 1945, il fut restauré après la réunification avec sa célèbre coupole de verre.",
+      "history": "Inauguré en 1894, le Reichstag a connu l'incendie de 1933 qui permit à Hitler de consolider son pouvoir. En avril 1945, la bataille pour le Reichstag fut l'un des derniers combats de la guerre en Europe. Le drapeau soviétique hissé sur le toit devint une image iconique de la victoire alliée. Rénové par Norman Foster dans les années 1990, il abrite aujourd'hui le Bundestag.",
+      "facts": "Plus de 1.5 million de graffitis de soldats soviétiques sont encore visibles à l'intérieur. La coupole de verre symbolise la transparence démocratique."
+    },
+    "holocaustMemorial": {
+      "name": "Mémorial de l'Holocauste",
+      "description": "Un mémorial poignant composé de 2 711 stèles de béton rendant hommage aux victimes juives de l'Holocauste. Inauguré en 2005, il se trouve près du bunker d'Hitler.",
+      "history": "Conçu par l'architecte Peter Eisenman, ce mémorial a été inauguré 60 ans après la fin de la guerre. Les stèles de hauteurs variables créent une atmosphère de désorientation et d'isolement. Le centre d'information souterrain présente les noms et témoignages des victimes. Le lieu rappelle les 6 millions de Juifs assassinés pendant la Shoah.",
+      "facts": "Le site se trouve à quelques mètres seulement de l'ancien bunker de Hitler. Les stèles sont traitées avec un produit anti-graffiti développé par la même entreprise qui fabriquait le Zyklon B."
+    },
+    "hitlerBunker": {
+      "name": "Bunker d'Hitler (Führerbunker)",
+      "description": "Le bunker souterrain où Hitler a passé ses derniers jours et s'est suicidé le 30 avril 1945. Aujourd'hui marqué par un simple panneau d'information.",
+      "history": "Situé 8 mètres sous terre, ce complexe de bunkers fut le dernier quartier général de Hitler. C'est ici qu'il épousa Eva Braun et se suicida alors que l'Armée rouge approchait. Le bunker fut détruit par les Soviétiques puis complètement rasé en 1988. Aujourd'hui, seul un parking et un panneau discret marquent l'emplacement. Cette sobriété est volontaire pour éviter tout pèlerinage néonazi.",
+      "facts": "Le bunker contenait 18 petites pièces et pouvait abriter 50 personnes. Les derniers occupants incluaient Joseph Goebbels et sa famille."
+    },
+    "topographyOfTerror": {
+      "name": "Topographie de la Terreur",
+      "description": "Musée et mémorial situé sur l'ancien site du quartier général de la Gestapo et des SS. Une documentation exhaustive des crimes nazis.",
+      "history": "Entre 1933 et 1945, ce site abritait les centres nerveux de la terreur nazie : le quartier général de la Gestapo, des SS et du Service de sécurité du Reich. C'est d'ici que furent orchestrées les déportations, la persécution et le génocide. Le bâtiment fut détruit pendant la guerre. Aujourd'hui, une exposition permanente documente méticuleusement les crimes du régime nazi à travers photos, documents et témoignages.",
+      "facts": "Une section du Mur de Berlin longe encore le site. Plus de 500 000 visiteurs viennent chaque année."
+    },
+    "sovietMemorialTreptow": {
+      "name": "Mémorial soviétique de Treptower Park",
+      "description": "Monument imposant honorant les 80 000 soldats soviétiques tombés lors de la bataille de Berlin en 1945. L'un des plus grands mémoriaux de guerre en Europe.",
+      "history": "Inauguré en 1949, ce mémorial monumental s'étend sur 100 000 m². Au centre se dresse une statue de 12 mètres représentant un soldat soviétique tenant un enfant allemand, l'épée baissée sur une croix gammée brisée. Plus de 7000 soldats sont enterrés ici. L'architecture stalinienne grandiose rappelle le sacrifice énorme de l'Union soviétique : près de 27 millions de morts pendant la guerre.",
+      "facts": "Le marbre utilisé provient de la Chancellerie du Reich de Hitler. La statue pèse 72 tonnes et est entièrement creuse."
     }
   },
   "info": {

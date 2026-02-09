@@ -3,6 +3,7 @@
   "siteSubtitle": "Entdecken Sie die faszinierende Geschichte Berlins",
   "welcome": "Auf den Spuren der Geschichte: vom Zweiten Weltkrieg zum Kalten Krieg",
   "periods": {
+    "title": "Zeitperioden",
     "preWar": "Vorkriegszeit",
     "warTime": "Zweiter Weltkrieg",
     "coldWar": "Kalter Krieg",
@@ -18,6 +19,9 @@
   "stats": {
     "monumentsCount": "Historische Denkmäler",
     "years": "56 Jahre Geschichte",
-    "map": "Interaktive Karte"
+    "map": "Interaktive Karte",
+    "monumentsDesc": "Ikonische Stätten des Zweiten Weltkriegs und des Kalten Kriegs",
+    "yearsDesc": "Von 1933 bis 1989, eine Zeit, die Berlin geprägt hat",
+    "mapDesc": "Erkunden Sie Berlin und lokalisieren Sie jedes historische Denkmal"
   }
 }

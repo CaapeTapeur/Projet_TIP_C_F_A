@@ -2,21 +2,26 @@
   "monuments": {
     "brandenburgGate": {
       "name": "Brandenburger Tor",
-      "description": "Das Wahrzeichen Berlins, erbaut zwischen 1788 und 1791...",
-      "history": "Neoklassizistisches Meisterwerk von Carl Gotthard Langhans...",
-      "facts": "Die Quadriga-Statue auf der Spitze wurde 1806 von Napoleon gestohlen..."
+      "description": "Das ikonische Symbol Berlins, erbaut zwischen 1788 und 1791. Im Zweiten Weltkrieg schwer beschädigt, wurde es zum Symbol der deutschen Teilung im Kalten Krieg.",
+      "history": "Neoklassisches Meisterwerk von Carl Gotthard Langhans...",
+      "facts": "Die Quadriga-Statue wurde 1806 von Napoleon gestohlen..."
     },
     "reichstag": {
-      "name": "Reichstag",
-      "description": "Das deutsche Parlament, Schauplatz bedeutender historischer Momente...",
+      "name": "Reichstagsgebäude",
+      "description": "Das deutsche Parlament, Schauplatz bedeutender historischer Ereignisse. 1933 niedergebrannt, 1945 schwer beschädigt, wurde es nach der Wiedervereinigung mit der berühmten Glaskuppel restauriert.",
       "history": "1894 eingeweiht, erlebte der Reichstag den Brand von 1933...",
       "facts": "Über 1,5 Millionen Graffiti sowjetischer Soldaten sind noch sichtbar..."
-    }
-  },
+    },
+    "sovietMemorialTreptow": {
+      "name": "Sowjetisches Ehrenmal Treptower Park",
+      "description": "Beeindruckendes Denkmal zu Ehren der 80.000 sowjetischen Soldaten, die während der Schlacht um Berlin 1945 gefallen sind. Eines der größten Kriegsdenkmäler Europas.",
+      "history": "1949 eingeweiht erstreckt sich dieses monumentale Ehrenmal über 100.000 m². Im Zentrum steht eine 12 Meter hohe Statue, die einen sowjetischen Soldaten darstellt, der ein deutsches Kind trägt, mit gesenktem Schwert über einem zerbrochenen Hakenkreuz. Über 7000 Soldaten sind hier begraben. Die grandiose stalinistische Architektur erinnert an das enorme Opfer der Sowjetunion: fast 27 Millionen Tote während des Krieges.",
+      "facts": "Der verwendete Marmor stammt aus der Reichskanzlei von Hitler. Die Statue wiegt 72 Tonnen und ist komplett hohl."
+    }  },
   "info": {
     "hours": "Öffnungszeiten",
     "price": "Preis",
-    "access": "Anfahrt",
+    "access": "Zugang",
     "history": "Geschichte",
     "anecdotes": "Anekdoten"
   }

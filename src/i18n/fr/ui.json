@@ -1,14 +1,15 @@
 {
   "navigation": {
+    "navigation": "Navigation",
     "home": "Accueil",
     "monuments": "Monuments",
     "timeline": "Chronologie",
-    "map": "Carte interactive"
-  },
-  "footer": {
-    "about": "Explorez l'histoire fascinante de Berlin à travers ses monuments emblématiques.",
-    "copyright": "© 2026 Berlin Historique - Tous droits réservés",
-    "tagline": "Un voyage à travers l'histoire de Berlin"
+    "map": "Carte interactive",
+    "footer": {
+      "about": "Explorez l'histoire fascinante de Berlin à travers ses monuments emblématiques.",
+      "copyright": "© 2026 Berlin Historique - Tous droits réservés",
+      "tagline": "Un voyage à travers l'histoire de Berlin"
+    }
   },
   "modal": {
     "close": "Fermer"

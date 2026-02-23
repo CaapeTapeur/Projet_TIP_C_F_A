@@ -35,6 +35,51 @@
       "description": "Monument imposant honorant les 80 000 soldats soviétiques tombés lors de la bataille de Berlin en 1945. L'un des plus grands mémoriaux de guerre en Europe.",
       "history": "Inauguré en 1949, ce mémorial monumental s'étend sur 100 000 m². Au centre se dresse une statue de 12 mètres représentant un soldat soviétique tenant un enfant allemand, l'épée baissée sur une croix gammée brisée. Plus de 7000 soldats sont enterrés ici. L'architecture stalinienne grandiose rappelle le sacrifice énorme de l'Union soviétique : près de 27 millions de morts pendant la guerre.",
       "facts": "Le marbre utilisé provient de la Chancellerie du Reich de Hitler. La statue pèse 72 tonnes et est entièrement creuse."
+    },
+    "kaiserWilhelmMemorialChurch": {
+      "name": "Église du Souvenir de l'Empereur Guillaume",
+      "description": "Église protestante située sur la Breitscheidplatz, construite entre 1891 et 1895 en hommage à l’empereur Guillaume Ier et à la victoire de Sedan.",
+      "history": "Gravement endommagée par les bombardements de la Seconde Guerre mondiale, son clocher en ruine a été conservé et intégré à un nouveau bâtiment construit entre 1959 et 1961 par Egon Eiermann. Elle sert aujourd’hui de mémorial contre la guerre et la destruction.",
+      "facts": "Le clocher détruit est surnommé par les Berlinois « la dent creuse ». L’église abrite une mosaïque d’origine et un Christ en bronze offert par Coventry.",
+      "hours": "09:00 - 18:00 (variable selon la saison)",
+      "price": "Entrée gratuite",
+      "access": "U-Bahn / S-Bahn : Zoologischer Garten, Bus : Breitscheidplatz"
+    },
+    "checkpointCharlie": {
+      "name": "Checkpoint Charlie",
+      "description": "Ancien poste-frontière entre Berlin-Est et Berlin-Ouest, symbole de la guerre froide situé sur la Friedrichstraße.",
+      "history": "Installé en 1961, il permettait le passage entre les secteurs américain et soviétique. Il devint le théâtre de nombreuses tentatives d’évasion et affrontements diplomatiques. Après la chute du Mur, il est devenu un lieu de mémoire.",
+      "facts": "Le nom « Charlie » vient de la lettre C en alphabet phonétique OTAN. Le poste actuel est une reconstitution touristique.",
+      "hours": "24 h/24",
+      "price": "Entrée gratuite",
+      "access": "U-Bahn : Kochstraße (U6), Bus : Friedrichstraße / Kochstraße"
+    },
+    "eastSideGallery": {
+      "name": "East Side Gallery",
+      "description": "Section de 1,3 km du mur de Berlin transformée en galerie d’art en plein air, décorée par 118 artistes internationaux après 1989.",
+      "history": "Créée après la chute du Mur, elle symbolise la liberté retrouvée. Le premier tableau fut réalisé en décembre 1989 par Christine Mac Lean, suivi d’œuvres d’artistes du monde entier.",
+      "facts": "C’est la plus longue portion du Mur encore debout. Les œuvres ont été restaurées en 2009.",
+      "hours": "24 h/24",
+      "price": "Entrée gratuite",
+      "access": "S & U-Bahn : Warschauer Straße, Tram : M10, M13, Bus : 300, 347"
+    },
+    "alexanderplatz": {
+      "name": "Alexanderplatz",
+      "description": "Grande place emblématique du centre de Berlin, cœur commercial et de transport, fréquentée par plus de 360 000 personnes par jour.",
+      "history": "Nommée en l’honneur du tsar Alexandre Ier après sa visite en 1805, elle a été remodelée plusieurs fois, notamment sous la RDA. Aujourd’hui, c’est un lieu de vie, de commerce et de manifestations.",
+      "facts": "On y trouve la célèbre Horloge universelle Urania et la tour de télévision (Fernsehturm) à proximité.",
+      "hours": "24 h/24",
+      "price": "Entrée gratuite",
+      "access": "S-Bahn : Alexanderplatz (S3, S5, S7, S9), U-Bahn : U2, U5, U8, Tram / Bus : nombreuses lignes"
+    },
+    "bebelplatz": {
+      "name": "Bebelplatz",
+      "description": "Place historique située sur Unter den Linden, entourée de bâtiments prestigieux comme l’opéra d’État et l’université Humboldt.",
+      "history": "Connue pour l’autodafé nazi du 10 mai 1933 où plus de 20 000 livres furent brûlés. Elle fait partie du projet architectural du Forum Fridericianum.",
+      "facts": "Une installation artistique souterraine visible à travers une vitre commémore les livres brûlés.",
+      "hours": "24 h/24",
+      "price": "Entrée gratuite",
+      "access": "U-Bahn : U2 Stadtmitte ou U6 Französische Straße, Bus : lignes passant sur/près de la place"
     }
   },
   "info": {

@@ -98,17 +98,17 @@ const App = () => {
     const stats = [
         {
             count: "18",
-            title: t('stats.monumentsCount'),
+            title: t('common.stats.monumentsCount'),
             description: t('common.stats.monumentsDesc')
         },
         {
             icon: "calendar",
-            title: t('stats.years'),
+            title: t('common.stats.years'),
             description: t('common.stats.yearsDesc')
         },
         {
             icon: "mapPin",
-            title: t('stats.map'),
+            title: t('common.stats.map'),
             description: t('common.stats.mapDesc')
         }
     ];
@@ -132,7 +132,7 @@ const App = () => {
             {activeSection === 'home' && (
                 <Hero
                     onExploreClick={() => handleSectionChange('monuments')}
-                    title={t('common.welcomeTitle')}
+                    title={t('common.siteTitle')}
                     subtitle={t('common.welcome')}
                     stats={stats}
                     currentLang={currentLang}

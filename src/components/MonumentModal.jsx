@@ -61,7 +61,7 @@ const MonumentModal = ({
 
           <div className="p-8 max-h-96 overflow-y-auto">
             <h2 className="text-3xl font-bold mb-4">
-              {t(`monuments.${monument.id}.name`)}
+              {t(`monuments.monuments.${monument.id}.name`)}
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">

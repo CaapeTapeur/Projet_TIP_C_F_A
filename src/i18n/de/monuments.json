@@ -2,22 +2,86 @@
   "monuments": {
     "brandenburgGate": {
       "name": "Brandenburger Tor",
-      "description": "Das ikonische Symbol Berlins, erbaut zwischen 1788 und 1791. Im Zweiten Weltkrieg schwer beschädigt, wurde es zum Symbol der deutschen Teilung im Kalten Krieg.",
-      "history": "Neoklassisches Meisterwerk von Carl Gotthard Langhans...",
-      "facts": "Die Quadriga-Statue wurde 1806 von Napoleon gestohlen..."
+      "description": "Das Wahrzeichen Berlins, erbaut zwischen 1788 und 1791. Während des Zweiten Weltkriegs stark beschädigt, wurde es später zum Symbol der deutschen Teilung im Kalten Krieg.",
+      "history": "Das klassizistische Meisterwerk von Carl Gotthard Langhans war einst das königliche Stadttor Berlins. 1945 lag es im Niemandsland zwischen Ost- und West-Berlin. Am 22. Dezember 1989 wurde es nach dem Fall der Mauer wieder eröffnet und symbolisiert heute die deutsche Wiedervereinigung und den europäischen Frieden.",
+      "facts": "Die Quadriga auf dem Tor wurde 1806 von Napoleon gestohlen und 1814 zurückgebracht. Während des Kalten Krieges war das Tor von beiden Seiten unzugänglich."
     },
     "reichstag": {
       "name": "Reichstagsgebäude",
-      "description": "Das deutsche Parlament, Schauplatz bedeutender historischer Ereignisse. 1933 niedergebrannt, 1945 schwer beschädigt, wurde es nach der Wiedervereinigung mit der berühmten Glaskuppel restauriert.",
-      "history": "1894 eingeweiht, erlebte der Reichstag den Brand von 1933...",
-      "facts": "Über 1,5 Millionen Graffiti sowjetischer Soldaten sind noch sichtbar..."
+      "description": "Der Sitz des deutschen Parlaments, Schauplatz vieler historischer Ereignisse. 1933 durch Brand zerstört, im Zweiten Weltkrieg schwer beschädigt und nach der Wiedervereinigung mit seiner Glaskuppel restauriert.",
+      "history": "Der Reichstag wurde 1894 eingeweiht und war 1933 Schauplatz des Brandes, der Hitlers Machtergreifung begünstigte. Im April 1945 wurde hier eine der letzten Schlachten Europas ausgetragen. Das Hissen der sowjetischen Fahne auf dem Dach wurde zu einem Symbol des Sieges. In den 1990er Jahren von Norman Foster renoviert, beherbergt er heute den Bundestag.",
+      "facts": "Über 1,5 Millionen sowjetische Graffiti sind im Inneren noch sichtbar. Die Glaskuppel symbolisiert demokratische Transparenz."
+    },
+    "holocaustMemorial": {
+      "name": "Denkmal für die ermordeten Juden Europas",
+      "description": "Ein bewegendes Denkmal mit 2.711 Betonstelen zum Gedenken an die jüdischen Opfer des Holocaust. 2005 eingeweiht, in der Nähe von Hitlers Bunker gelegen.",
+      "history": "Entworfen vom Architekten Peter Eisenman und 60 Jahre nach Kriegsende eröffnet. Die unterschiedlich hohen Stelen erzeugen ein Gefühl der Desorientierung und Isolation. Im unterirdischen Informationszentrum werden Namen und Zeugnisse der Opfer gezeigt.",
+      "facts": "Das Gelände liegt nur wenige Meter vom ehemaligen Führerbunker entfernt. Die Stelen sind mit einem speziellen Anti-Graffiti-Mittel behandelt, das von derselben Firma stammt, die Zyklon B herstellte."
+    },
+    "hitlerBunker": {
+      "name": "Führerbunker",
+      "description": "Der unterirdische Bunker, in dem Hitler seine letzten Tage verbrachte und am 30. April 1945 Selbstmord beging. Heute nur durch eine Informationstafel markiert.",
+      "history": "Etwa acht Meter unter der Erde befand sich hier Hitlers letzter Befehlsstand. Er heiratete Eva Braun und nahm sich das Leben, als die Rote Armee näher rückte. Der Bunker wurde von den Sowjets zerstört und 1988 vollständig beseitigt.",
+      "facts": "Der Bunker bestand aus 18 kleinen Räumen und bot Platz für etwa 50 Personen. Zu den letzten Bewohnern gehörten Joseph Goebbels und seine Familie."
+    },
+    "topographyOfTerror": {
+      "name": "Topographie des Terrors",
+      "description": "Museum und Gedenkstätte auf dem ehemaligen Gelände des Hauptquartiers der Gestapo und SS. Dokumentiert die Verbrechen des NS-Regimes.",
+      "history": "Zwischen 1933 und 1945 befanden sich hier die zentralen Behörden der NS-Terrorherrschaft. Von hier aus wurden Deportationen und Verfolgungen organisiert. Nach dem Krieg zerstört, beherbergt das Gelände heute eine Dauerausstellung mit Fotos, Dokumenten und Zeugnissen.",
+      "facts": "Ein Teil der Berliner Mauer verläuft noch entlang des Geländes. Über 500.000 Besucher pro Jahr."
     },
     "sovietMemorialTreptow": {
-      "name": "Sowjetisches Ehrenmal Treptower Park",
-      "description": "Beeindruckendes Denkmal zu Ehren der 80.000 sowjetischen Soldaten, die während der Schlacht um Berlin 1945 gefallen sind. Eines der größten Kriegsdenkmäler Europas.",
-      "history": "1949 eingeweiht erstreckt sich dieses monumentale Ehrenmal über 100.000 m². Im Zentrum steht eine 12 Meter hohe Statue, die einen sowjetischen Soldaten darstellt, der ein deutsches Kind trägt, mit gesenktem Schwert über einem zerbrochenen Hakenkreuz. Über 7000 Soldaten sind hier begraben. Die grandiose stalinistische Architektur erinnert an das enorme Opfer der Sowjetunion: fast 27 Millionen Tote während des Krieges.",
-      "facts": "Der verwendete Marmor stammt aus der Reichskanzlei von Hitler. Die Statue wiegt 72 Tonnen und ist komplett hohl."
-    }  },
+      "name": "Sowjetisches Ehrenmal im Treptower Park",
+      "description": "Monumentales Denkmal zu Ehren der 80.000 sowjetischen Soldaten, die 1945 in der Schlacht um Berlin gefallen sind. Eines der größten Kriegsdenkmäler Europas.",
+      "history": "1949 eröffnet, erstreckt sich das Denkmal über 100.000 m². Im Zentrum steht eine 12 Meter hohe Statue eines sowjetischen Soldaten mit einem geretteten deutschen Kind und einem zerbrochenen Hakenkreuz unter dem Schwert.",
+      "facts": "Der Marmor stammt aus Hitlers Reichskanzlei. Die Statue wiegt 72 Tonnen und ist innen hohl."
+    },
+    "kaiserWilhelmMemorialChurch": {
+      "name": "Kaiser-Wilhelm-Gedächtniskirche",
+      "description": "Evangelische Kirche auf dem Breitscheidplatz, zwischen 1891 und 1895 erbaut zu Ehren Kaiser Wilhelms I. und des Sieges bei Sedan.",
+      "history": "Im Zweiten Weltkrieg schwer beschädigt. Der zerstörte Turm wurde erhalten und zwischen 1959 und 1961 in ein modernes Ensemble von Egon Eiermann integriert. Heute dient die Kirche als Mahnmal gegen Krieg und Zerstörung.",
+      "facts": "Der zerstörte Turm wird von den Berlinern „der hohle Zahn“ genannt. In der Kirche befinden sich originale Mosaike und ein bronzener Christus aus Coventry.",
+      "hours": "09:00 - 18:00 (je nach Saison variabel)",
+      "price": "Eintritt frei",
+      "access": "U-Bahn / S-Bahn: Zoologischer Garten, Bus: Breitscheidplatz"
+    },
+    "checkpointCharlie": {
+      "name": "Checkpoint Charlie",
+      "description": "Ehemaliger Grenzübergang zwischen Ost- und West-Berlin, Symbol des Kalten Krieges an der Friedrichstraße.",
+      "history": "1961 eingerichtet, verband er den amerikanischen mit dem sowjetischen Sektor. Schauplatz zahlreicher Fluchtversuche und diplomatischer Spannungen. Nach dem Mauerfall zu einem Gedenkort geworden.",
+      "facts": "„Charlie“ steht für den Buchstaben C im NATO-Alphabet. Der heutige Kontrollpunkt ist eine Nachbildung.",
+      "hours": "24 Stunden geöffnet",
+      "price": "Eintritt frei",
+      "access": "U-Bahn: Kochstraße (U6), Bus: Friedrichstraße / Kochstraße"
+    },
+    "eastSideGallery": {
+      "name": "East Side Gallery",
+      "description": "1,3 km langes Stück der Berliner Mauer, das nach 1989 in eine Open-Air-Galerie mit Werken von 118 internationalen Künstlern verwandelt wurde.",
+      "history": "Nach dem Fall der Mauer geschaffen, symbolisiert sie die wiedergewonnene Freiheit. Das erste Bild wurde im Dezember 1989 von Christine Mac Lean gemalt.",
+      "facts": "Der längste noch erhaltene Abschnitt der Mauer. Die Kunstwerke wurden 2009 restauriert.",
+      "hours": "24 Stunden geöffnet",
+      "price": "Eintritt frei",
+      "access": "S- & U-Bahn: Warschauer Straße, Tram: M10, M13, Bus: 300, 347"
+    },
+    "alexanderplatz": {
+      "name": "Alexanderplatz",
+      "description": "Großer Platz im Zentrum Berlins, wichtiger Verkehrsknotenpunkt und Handelszentrum, täglich von über 360.000 Menschen besucht.",
+      "history": "Benannt nach Zar Alexander I. nach dessen Besuch 1805. Während der DDR-Zeit stark umgestaltet, heute ein lebendiger Treffpunkt für Einheimische und Touristen.",
+      "facts": "Hier befinden sich die bekannte Weltzeituhr Urania und der Fernsehturm in unmittelbarer Nähe.",
+      "hours": "24 Stunden geöffnet",
+      "price": "Eintritt frei",
+      "access": "S-Bahn: Alexanderplatz (S3, S5, S7, S9), U-Bahn: U2, U5, U8, Tram / Bus: zahlreiche Linien"
+    },
+    "bebelplatz": {
+      "name": "Bebelplatz",
+      "description": "Historischer Platz an der Straße Unter den Linden, umgeben von der Staatsoper und der Humboldt-Universität.",
+      "history": "Bekannt durch die Bücherverbrennung der Nazis am 10. Mai 1933, bei der über 20.000 Bücher vernichtet wurden. Teil des architektonischen Forums Fridericianum.",
+      "facts": "Ein unterirdisches Kunstwerk, durch Glas sichtbar, erinnert an die verbrannten Bücher.",
+      "hours": "24 Stunden geöffnet",
+      "price": "Eintritt frei",
+      "access": "U-Bahn: U2 Stadtmitte oder U6 Französische Straße, Bus: Linien in der Nähe des Platzes"
+    }
+  },
   "info": {
     "hours": "Öffnungszeiten",
     "price": "Preis",

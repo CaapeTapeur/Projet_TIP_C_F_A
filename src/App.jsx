@@ -7,6 +7,7 @@ import MonumentsList from './components/MonumentsList';
 import MonumentModal from './components/MonumentModal';
 import Timeline from './components/Timeline';
 import InteractiveMap from './components/InteractiveMap';
+import 'leaflet/dist/leaflet.css';
 import { monuments } from './data/monuments';
 import { periodLabels, periodColors } from './data/monuments';
 
@@ -97,7 +98,7 @@ const App = () => {
 
     const stats = [
         {
-            count: "18",
+            count: "9",
             title: t('common.stats.monumentsCount'),
             description: t('common.stats.monumentsDesc')
         },

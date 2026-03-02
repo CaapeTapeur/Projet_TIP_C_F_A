@@ -1,85 +1,85 @@
 {
   "monuments": {
-    "brandenburgGate": {
-      "name": "Porte de Brandebourg",
-      "description": "Le symbole emblématique de Berlin, construit entre 1788 et 1791. Durant la Seconde Guerre mondiale, elle a été gravement endommagée et est devenue le symbole de la division allemande pendant la Guerre froide.",
-      "history": "Chef-d'œuvre néoclassique de Carl Gotthard Langhans, la Porte de Brandebourg était la porte d'entrée royale de Berlin. En 1945, elle se trouvait dans le no man's land entre Berlin-Est et Berlin-Ouest. Le 22 décembre 1989, elle fut rouverte lors de la chute du Mur. Aujourd'hui, elle symbolise la réunification allemande et la paix européenne.",
-      "facts": "La statue du Quadrige au sommet a été volée par Napoléon en 1806 et restituée en 1814. Durant la guerre froide, elle était inaccessible des deux côtés du mur."
-    },
     "reichstag": {
       "name": "Reichstag",
-      "description": "Le parlement allemand, théâtre de moments historiques majeurs. Incendié en 1933, gravement endommagé en 1945, il fut restauré après la réunification avec sa célèbre coupole de verre.",
+      "description": "Le palais du Reichstag est un bâtiment de Berlin en Allemagne, construit pour abriter le Reichstag (Diète du Reich) à partir de 1894 et jusqu'à son incendie dans la nuit du 27 au 28 février 1933. Il abrite le Bundestag (Diète fédérale) de la République fédérale d'Allemagne depuis le retour des institutions à Berlin en 1999.",
       "history": "Inauguré en 1894, le Reichstag a connu l'incendie de 1933 qui permit à Hitler de consolider son pouvoir. En avril 1945, la bataille pour le Reichstag fut l'un des derniers combats de la guerre en Europe. Le drapeau soviétique hissé sur le toit devint une image iconique de la victoire alliée. Rénové par Norman Foster dans les années 1990, il abrite aujourd'hui le Bundestag.",
-      "facts": "Plus de 1.5 million de graffitis de soldats soviétiques sont encore visibles à l'intérieur. La coupole de verre symbolise la transparence démocratique."
+      "facts": "Plus de 1,5 million de graffitis de soldats soviétiques sont encore visibles à l'intérieur. La coupole de verre symbolise la transparence démocratique.",
+      "hours": "8h00 - 24h00",
+      "price": "Entrée gratuite mais inscription préalable obligatoire",
+      "access": "U-Bahn : Station Bundestag (U5) / Bus : Ligne 100 et ligne M41"
     },
-    "holocaustMemorial": {
-      "name": "Mémorial de l'Holocauste",
-      "description": "Un mémorial poignant composé de 2 711 stèles de béton rendant hommage aux victimes juives de l'Holocauste. Inauguré en 2005, il se trouve près du bunker d'Hitler.",
-      "history": "Conçu par l'architecte Peter Eisenman, ce mémorial a été inauguré 60 ans après la fin de la guerre. Les stèles de hauteurs variables créent une atmosphère de désorientation et d'isolement. Le centre d'information souterrain présente les noms et témoignages des victimes. Le lieu rappelle les 6 millions de Juifs assassinés pendant la Shoah.",
-      "facts": "Le site se trouve à quelques mètres seulement de l'ancien bunker de Hitler. Les stèles sont traitées avec un produit anti-graffiti développé par la même entreprise qui fabriquait le Zyklon B."
-    },
-    "hitlerBunker": {
-      "name": "Bunker d'Hitler (Führerbunker)",
-      "description": "Le bunker souterrain où Hitler a passé ses derniers jours et s'est suicidé le 30 avril 1945. Aujourd'hui marqué par un simple panneau d'information.",
-      "history": "Situé 8 mètres sous terre, ce complexe de bunkers fut le dernier quartier général de Hitler. C'est ici qu'il épousa Eva Braun et se suicida alors que l'Armée rouge approchait. Le bunker fut détruit par les Soviétiques puis complètement rasé en 1988. Aujourd'hui, seul un parking et un panneau discret marquent l'emplacement. Cette sobriété est volontaire pour éviter tout pèlerinage néonazi.",
-      "facts": "Le bunker contenait 18 petites pièces et pouvait abriter 50 personnes. Les derniers occupants incluaient Joseph Goebbels et sa famille."
+    "kaiserWilhelmMemorialChurch": {
+      "name": "Église du Souvenir de l’Empereur Guillaume",
+      "description": "L’église du Souvenir de l'Empereur Guillaume est située au centre de la Breitscheidplatz à l'entrée du Kurfürstendamm, une des plus célèbres avenues de Berlin, la capitale allemande.",
+      "history": "Cette église protestante construite entre 1891 et 1895 selon un projet de Franz Schwechten rendant hommage au premier empereur allemand, Guillaume Ier , ainsi qu'à la victoire de Sedan sur l'armée française en 1870. Le clocher a été conservé dans son état consécutif au bombardement de Berlin pendant la Seconde Guerre mondiale et complété de 1959 à 1961 par un nouveau bâtiment dessiné par Egon Eiermann, comme mémorial des destructions dues au conflit.",
+      "facts": "Le clocher est surnommé par les Berlinois « la dent creuse ». L’église abrite un Christ en bronze offert par la ville de Coventry.",
+      "hours": "09h00 - 18h00 (variable selon la saison)",
+      "price": "Entrée gratuite",
+      "access": "U-/S-Bahn: Zoologischer Garten / Bus: Breitscheidplatz"
     },
     "topographyOfTerror": {
       "name": "Topographie de la Terreur",
-      "description": "Musée et mémorial situé sur l'ancien site du quartier général de la Gestapo et des SS. Une documentation exhaustive des crimes nazis.",
-      "history": "Entre 1933 et 1945, ce site abritait les centres nerveux de la terreur nazie : le quartier général de la Gestapo, des SS et du Service de sécurité du Reich. C'est d'ici que furent orchestrées les déportations, la persécution et le génocide. Le bâtiment fut détruit pendant la guerre. Aujourd'hui, une exposition permanente documente méticuleusement les crimes du régime nazi à travers photos, documents et témoignages.",
-      "facts": "Une section du Mur de Berlin longe encore le site. Plus de 500 000 visiteurs viennent chaque année."
-    },
-    "sovietMemorialTreptow": {
-      "name": "Mémorial soviétique de Treptower Park",
-      "description": "Monument imposant honorant les 80 000 soldats soviétiques tombés lors de la bataille de Berlin en 1945. L'un des plus grands mémoriaux de guerre en Europe.",
-      "history": "Inauguré en 1949, ce mémorial monumental s'étend sur 100 000 m². Au centre se dresse une statue de 12 mètres représentant un soldat soviétique tenant un enfant allemand, l'épée baissée sur une croix gammée brisée. Plus de 7000 soldats sont enterrés ici. L'architecture stalinienne grandiose rappelle le sacrifice énorme de l'Union soviétique : près de 27 millions de morts pendant la guerre.",
-      "facts": "Le marbre utilisé provient de la Chancellerie du Reich de Hitler. La statue pèse 72 tonnes et est entièrement creuse."
-    },
-    "kaiserWilhelmMemorialChurch": {
-      "name": "Église du Souvenir de l'Empereur Guillaume",
-      "description": "Église protestante située sur la Breitscheidplatz, construite entre 1891 et 1895 en hommage à l’empereur Guillaume Ier et à la victoire de Sedan.",
-      "history": "Gravement endommagée par les bombardements de la Seconde Guerre mondiale, son clocher en ruine a été conservé et intégré à un nouveau bâtiment construit entre 1959 et 1961 par Egon Eiermann. Elle sert aujourd’hui de mémorial contre la guerre et la destruction.",
-      "facts": "Le clocher détruit est surnommé par les Berlinois « la dent creuse ». L’église abrite une mosaïque d’origine et un Christ en bronze offert par Coventry.",
-      "hours": "09:00 - 18:00 (variable selon la saison)",
+      "description": "Topographie de la terreur est un musée à Berlin situé sur la Niederkirchnerstrasse sur l'ancien siège de la Gestapo et des SS.",
+      "history": "Les bâtiments abritant les quartiers généraux de la Gestapo et des SS furent largement détruits à la fin de la Seconde Guerre mondiale et les ruines rasées après la guerre. La limite entre le secteur soviétique et le secteur américain passant sur la Niederkirchnerstrasse, le mur de Berlin s'y trouva entre 1961 et 1989",
+      "facts": "Une portion du mur de Berlin longe encore le site. Plus de 500 000 visiteurs chaque année.",
+      "hours": "10h00 - 20h00 (tous les jours)",
       "price": "Entrée gratuite",
-      "access": "U-Bahn / S-Bahn : Zoologischer Garten, Bus : Breitscheidplatz"
+      "access": "U-Bahn : Station Kochstraße, S-Bahn : Anhalter Bahnhof, De nombreux bus passent à proximité"
+    },
+    "holocaustMemorial": {
+      "name": "Mémorial de l’Holocauste",
+      "description": "Le Mémorial aux Juifs assassinés d'Europe, également appelé Mémorial de l'Holocauste, est un monument situé au centre de Berlin, entre la porte de Brandebourg et la Potsdamer Platz, en Allemagne, perpétuant le souvenir des victimes juives exterminées par les nazis au cours de l'Holocauste appelé Shoah en hébreu.",
+      "history": "Conçu par l’architecte Peter Eisenman et inauguré en 2005, le monument symbolise la désorientation et la solitude vécues pendant la Shoah.",
+      "facts": "Situé près du bunker d’Hitler, il comporte aussi un centre d’information souterrain.",
+      "hours": "24h/24",
+      "price": "Entrée gratuite",
+      "access": "Métro: Potsdamer Platz ou Mohrenstraße (U2), Bus: 100, M41"
     },
     "checkpointCharlie": {
       "name": "Checkpoint Charlie",
       "description": "Ancien poste-frontière entre Berlin-Est et Berlin-Ouest, symbole de la guerre froide situé sur la Friedrichstraße.",
-      "history": "Installé en 1961, il permettait le passage entre les secteurs américain et soviétique. Il devint le théâtre de nombreuses tentatives d’évasion et affrontements diplomatiques. Après la chute du Mur, il est devenu un lieu de mémoire.",
-      "facts": "Le nom « Charlie » vient de la lettre C en alphabet phonétique OTAN. Le poste actuel est une reconstitution touristique.",
-      "hours": "24 h/24",
+      "history": "Le Checkpoint Charlie (« point de contrôle C », « Charlie » désignant la lettre C dans l'alphabet phonétique de l'OTAN permettant ainsi la compréhension entre les pays tels que les États-Unis, l'Allemagne, la France et d'autres) est l'un des postes-frontières de Berlin qui, lors de la guerre froide, permettait de franchir le mur qui divisait la capitale allemande entre le secteur Ouest et le secteur Est. Il se situait sur la Friedrichstraße, à la frontière entre les districts de Mitte (en secteur soviétique) et Kreuzberg (en secteur américain).",
+      "facts": "Le poste actuel est une reconstitution. Le nom « Charlie » vient de la lettre C en alphabet OTAN.",
+      "hours": "24h/24",
       "price": "Entrée gratuite",
-      "access": "U-Bahn : Kochstraße (U6), Bus : Friedrichstraße / Kochstraße"
+      "access": "U-Bahn: Kochstraße (U6), Bus: Friedrichstraße / Kochstraße"
     },
     "eastSideGallery": {
       "name": "East Side Gallery",
-      "description": "Section de 1,3 km du mur de Berlin transformée en galerie d’art en plein air, décorée par 118 artistes internationaux après 1989.",
-      "history": "Créée après la chute du Mur, elle symbolise la liberté retrouvée. Le premier tableau fut réalisé en décembre 1989 par Christine Mac Lean, suivi d’œuvres d’artistes du monde entier.",
-      "facts": "C’est la plus longue portion du Mur encore debout. Les œuvres ont été restaurées en 2009.",
-      "hours": "24 h/24",
+      "description": "Il s'agit de la plus longue section du mur encore debout.",
+      "history": "Elle est constituée d'oeuvres réalisées par 118 artistes de 21 pays, du côté Est du mur de Berlin.Elle est peut-être la plus grande galerie permanente en plein air dans le monde. Le premier tableau a été effectué par Christine Mac Lean en décembre 1989, immédiatement après la chute du mur. D'autres ont suivi, accomplis par Jürgen Grosse alias Indiano, Kasra Alavi, Kani Alavi, Jim Avignon, Thierry Noir, Kim Prisu, Hervé Morlay, Ingeborg Blumenthal, Ignasi Blanch Gisbert, Birgit Kinder, etc.",
+      "facts": "Longue de 1,3 km, elle attire des millions de visiteurs chaque année.",
+      "hours": "24h/24",
       "price": "Entrée gratuite",
-      "access": "S & U-Bahn : Warschauer Straße, Tram : M10, M13, Bus : 300, 347"
+      "access": "S-/U-Bahn: Warschauer Straße, Tram: M10, Bus: 300, 347"
     },
     "alexanderplatz": {
       "name": "Alexanderplatz",
-      "description": "Grande place emblématique du centre de Berlin, cœur commercial et de transport, fréquentée par plus de 360 000 personnes par jour.",
-      "history": "Nommée en l’honneur du tsar Alexandre Ier après sa visite en 1805, elle a été remodelée plusieurs fois, notamment sous la RDA. Aujourd’hui, c’est un lieu de vie, de commerce et de manifestations.",
-      "facts": "On y trouve la célèbre Horloge universelle Urania et la tour de télévision (Fernsehturm) à proximité.",
-      "hours": "24 h/24",
+      "description": "L'Alexanderplatz est une place de Berlin. Située dans le quartier Mitte (Centre).",
+      "history": "La place est fréquentée quotidiennement par plus de 360 000 personnes. Elle tient son nom de la visite à Berlin de l'empereur russe Alexandre Ier en 1805.",
+      "facts": "On y trouve l’Horloge universelle Urania et la tour de télévision à proximité.",
+      "hours": "24h/24",
       "price": "Entrée gratuite",
-      "access": "S-Bahn : Alexanderplatz (S3, S5, S7, S9), U-Bahn : U2, U5, U8, Tram / Bus : nombreuses lignes"
+      "access": "S-Bahn: Alexanderplatz (S3, S5, S7, S9), U-Bahn: U2, U5, U8, Tram/Bus: nombreuses lignes"
     },
     "bebelplatz": {
       "name": "Bebelplatz",
-      "description": "Place historique située sur Unter den Linden, entourée de bâtiments prestigieux comme l’opéra d’État et l’université Humboldt.",
-      "history": "Connue pour l’autodafé nazi du 10 mai 1933 où plus de 20 000 livres furent brûlés. Elle fait partie du projet architectural du Forum Fridericianum.",
+      "description": "La Bebelplatz (anciennement Opernplatz) est une place publique de Berlin, en Allemagne. Elle correspondait à ce qui est aussi connu sous le nom de Forum Fridericianum.",
+      "history": "La place est sur le côté sud de l'avenue Unter den Linden, l'un des axes principaux est-ouest dans le centre de la ville. Elle est délimitée à l'est par l'opéra d'État (d'où son nom d'avant-guerre), à l'ouest par des bâtiments de l'université Humboldt et, au sud, par la cathédrale Saint-Edwige, la plus ancienne église catholique de Berlin encore ouverte au culte.",
       "facts": "Une installation artistique souterraine visible à travers une vitre commémore les livres brûlés.",
-      "hours": "24 h/24",
+      "hours": "24h/24",
       "price": "Entrée gratuite",
-      "access": "U-Bahn : U2 Stadtmitte ou U6 Französische Straße, Bus : lignes passant sur/près de la place"
+      "access": "U-Bahn: Stadtmitte (U2) ou Französische Straße (U6), Bus: lignes proches"
+    },
+    "tempelhof": {
+      "name": "Berlin-Tempelhof",
+      "description": "L'aéroport international de Berlin-Tempelhof était l'un des aéroports de Berlin. Il était situé dans le quartier de Tempelhof dans l'arrondissement de Tempelhof-Schöneberg.",
+      "history": "C'était le plus petit des trois aéroports berlinois. Il est fermé depuis le 30 octobre 2008 et depuis le 8 mai 2010, il est reconverti en un immense parc, le champ de Tempelhof.\nLe terrain sur lequel il est construit a une forme ovale avec deux pistes d'atterrissage et est bordé par un complexe de bâtiments dont les plans devaient représenter l'aigle des armoiries de l'Allemagne: les hangars en demi-cercle mesurant 1 230 m de long formant les ailes déployées de l'oiseau.\n",
+      "facts": "Cet aéroport a servi de modèle pour de nombreux aéroports par la suite, son organisation avant-gardiste attribuant des niveaux distincts pour les départs, les arrivées et le fret.",
+      "hours": "Mardi : fermé Lun, Mer - Dim : 10 - 17h",
+      "price": "Adultes: 17,50 € Tarif réduit : 12,00 €",
+      "access": "Métro (U-Bahn) U6 — station Platz der Luftbrücke, U8 — station Boddinstraße, S-Bahn Tempelhof, Bus Lignes BVG"
     }
   },
   "info": {

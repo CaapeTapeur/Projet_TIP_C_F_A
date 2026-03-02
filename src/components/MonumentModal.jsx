@@ -69,21 +69,21 @@ const MonumentModal = ({
                 <Clock className="text-red-800 mt-1 flex-shrink-0" size={20} />
                 <div>
                   <p className="font-semibold">{t('monuments.info.hours')}</p>
-                  <p className="text-sm text-gray-600">{monument.hours}</p>
+                  <p className="text-sm text-gray-600">{t(`monuments.monuments.${monument.id}.hours`)}</p>
                 </div>
               </div>
               <div className="flex items-start space-x-2">
                 <Euro className="text-red-800 mt-1 flex-shrink-0" size={20} />
                 <div>
                   <p className="font-semibold">{t('monuments.info.price')}</p>
-                  <p className="text-sm text-gray-600">{monument.price}</p>
+                  <p className="text-sm text-gray-600">{t(`monuments.monuments.${monument.id}.price`)}</p>
                 </div>
               </div>
               <div className="flex items-start space-x-2">
                 <MapPin className="text-red-800 mt-1 flex-shrink-0" size={20} />
                 <div>
                   <p className="font-semibold">{t('monuments.info.access')}</p>
-                  <p className="text-sm text-gray-600">{monument.access}</p>
+                  <p className="text-sm text-gray-600">{t(`monuments.monuments.${monument.id}.access`)}</p>
                 </div>
               </div>
             </div>

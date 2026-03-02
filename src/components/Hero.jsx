@@ -11,13 +11,13 @@ const Hero = ({ onExploreClick, title, subtitle, stats, currentLang }) => {
           <div className="absolute inset-0">
             {/* Base image */}
             <img
-                src="src/img/berlin_old.jpg"
+                src="./img/berlin_old.jpg"
                 alt="Berlin Old"
                 className="w-full h-full object-cover overlay-fade"
             />
             {/* Overlay image with fading effect */}
             <img
-                src="src/img/berlin_new.jpg"
+                src="./img/berlin_new.jpg"
                 alt="Berlin New"
                 className="w-full h-full object-cover"
             />
@@ -27,7 +27,7 @@ const Hero = ({ onExploreClick, title, subtitle, stats, currentLang }) => {
           <div className="relative container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
             <div className="max-w-4xl">
               <div className="mb-6 inline-block px-6 py-2 bg-red-800/80 backdrop-blur-sm rounded-full text-sm font-semibold uppercase tracking-wider">
-                1933 - 1989
+                1933 - 2005
               </div>
               <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
                 {title || t('common.siteTitle')}
@@ -56,7 +56,7 @@ const Hero = ({ onExploreClick, title, subtitle, stats, currentLang }) => {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
               {stats && stats.map((stat, index) => (
-                <div key={index} className="p-8 bg-gray-50 rounded-xl hover:shadow-xl transition-shadow">
+                <div key={index} className="p-8 bg-white rounded-xl">
                   <div className="w-16 h-16 bg-red-800 rounded-full flex items-center justify-center mx-auto mb-4">
                     {stat.count ? (
                       <span className="text-3xl font-bold text-white">{stat.count}</span>

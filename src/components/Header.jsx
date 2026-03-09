@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu } from 'lucide-react';
+import { Menu, FileDown } from 'lucide-react';
 import { useLanguage, useTranslation } from '../App';
 
 const Header = ({
@@ -10,6 +10,18 @@ const Header = ({
                 }) => {
   const { currentLang, changeLanguage } = useLanguage();
   const { t } = useTranslation();
+
+  const pdfFiles = {
+    fr: '/pdf/berlin_fr.pdf',
+    de: '/pdf/berlin_de.pdf',
+  };
+
+  const handleDownloadPdf = () => {
+    const link = document.createElement('a');
+    link.href = pdfFiles[currentLang];
+    link.download = `berlin_${currentLang}.pdf`;
+    link.click();
+  };
 
   return (
       <header className="bg-black text-white shadow-2xl sticky top-0 z-50 border-b-4 border-red-800">
@@ -73,6 +85,14 @@ const Header = ({
             </nav>
 
             <div className="flex items-center space-x-3">
+              <button
+                  onClick={handleDownloadPdf}
+                  title={currentLang === 'fr' ? 'Télécharger le PDF' : 'PDF herunterladen'}
+                  className="p-2 rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white transition-all"
+              >
+                <FileDown size={22} />
+              </button>
+
               <div className="flex bg-gray-800 rounded-lg p-1 border border-gray-700 shadow-lg">
                 <button
                     onClick={() => changeLanguage('fr')}
@@ -88,7 +108,7 @@ const Header = ({
                     onClick={() => changeLanguage('de')}
                     className={`px-4 py-2 rounded-md font-semibold transition-all hover:transform hover:-translate-y-0.5 ${
                         currentLang === 'de'
-                            ? 'bg-gradient-to-r from-red-800 to-red-900 text-white shadow-md' // Même dégradé rouge que FR
+                            ? 'bg-gradient-to-r from-red-800 to-red-900 text-white shadow-md'
                             : 'text-gray-300 hover:bg-gray-700 hover:text-white'
                     }`}
                 >
@@ -109,56 +129,36 @@ const Header = ({
               <nav className="lg:hidden mt-4 pb-2 border-t border-gray-800 pt-4">
                 <div className="flex flex-col space-y-2">
                   <button
-                      onClick={() => {
-                        onSectionChange('home');
-                        setMobileMenuOpen(false);
-                      }}
-                      className={`px-4 py-3 rounded-lg text-left transition-all font-medium ${
-                          activeSection === 'home'
-                              ? 'bg-red-800 text-white'
-                              : 'text-gray-300 hover:bg-gray-800'
-                      }`}
+                      onClick={() => { onSectionChange('home'); setMobileMenuOpen(false); }}
+                      className={`px-4 py-3 rounded-lg text-left transition-all font-medium ${activeSection === 'home' ? 'bg-red-800 text-white' : 'text-gray-300 hover:bg-gray-800'}`}
                   >
                     {t('ui.navigation.home')}
                   </button>
                   <button
-                      onClick={() => {
-                        onSectionChange('monuments');
-                        setMobileMenuOpen(false);
-                      }}
-                      className={`px-4 py-3 rounded-lg text-left transition-all font-medium ${
-                          activeSection === 'monuments'
-                              ? 'bg-red-800 text-white'
-                              : 'text-gray-300 hover:bg-gray-800'
-                      }`}
+                      onClick={() => { onSectionChange('monuments'); setMobileMenuOpen(false); }}
+                      className={`px-4 py-3 rounded-lg text-left transition-all font-medium ${activeSection === 'monuments' ? 'bg-red-800 text-white' : 'text-gray-300 hover:bg-gray-800'}`}
                   >
                     {t('ui.navigation.monuments')}
                   </button>
                   <button
-                      onClick={() => {
-                        onSectionChange('timeline');
-                        setMobileMenuOpen(false);
-                      }}
-                      className={`px-4 py-3 rounded-lg text-left transition-all font-medium ${
-                          activeSection === 'timeline'
-                              ? 'bg-red-800 text-white'
-                              : 'text-gray-300 hover:bg-gray-800'
-                      }`}
+                      onClick={() => { onSectionChange('timeline'); setMobileMenuOpen(false); }}
+                      className={`px-4 py-3 rounded-lg text-left transition-all font-medium ${activeSection === 'timeline' ? 'bg-red-800 text-white' : 'text-gray-300 hover:bg-gray-800'}`}
                   >
                     {t('ui.navigation.timeline')}
                   </button>
                   <button
-                      onClick={() => {
-                        onSectionChange('map');
-                        setMobileMenuOpen(false);
-                      }}
-                      className={`px-4 py-3 rounded-lg text-left transition-all font-medium ${
-                          activeSection === 'map'
-                              ? 'bg-red-800 text-white'
-                              : 'text-gray-300 hover:bg-gray-800'
-                      }`}
+                      onClick={() => { onSectionChange('map'); setMobileMenuOpen(false); }}
+                      className={`px-4 py-3 rounded-lg text-left transition-all font-medium ${activeSection === 'map' ? 'bg-red-800 text-white' : 'text-gray-300 hover:bg-gray-800'}`}
                   >
                     {t('ui.navigation.map')}
+                  </button>
+
+                  <button
+                      onClick={handleDownloadPdf}
+                      className="px-4 py-3 rounded-lg text-left transition-all font-medium text-gray-300 hover:bg-gray-800 flex items-center gap-2"
+                  >
+                    <FileDown size={18} />
+                    {currentLang === 'fr' ? 'Télécharger le PDF' : 'PDF herunterladen'}
                   </button>
                 </div>
               </nav>
